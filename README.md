@@ -16,3 +16,5 @@ react-native run-android
 android emulator   ctrl+m
 
 npm start -- --reset-cache
+
+#  dev 分支创建 底部栏 ，切换修改 reducer
