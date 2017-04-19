@@ -3,11 +3,10 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-
 import {
-  AppRegistry
+  AppRegistry,
 } from 'react-native';
 
-
 import setup from './app/setup';
-AppRegistry.registerComponent('SheBaoProject',setup);
+
+AppRegistry.registerComponent('SheBaoProject', setup);

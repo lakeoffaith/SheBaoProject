@@ -1,20 +1,26 @@
-import App from './containers/App';
-import React from 'React';
+import React,{Component} from 'react';
+import {
+  View,
+  Text
+} from 'react-native';
 import {Provider} from 'react-redux';
 import configureStore from './store';
-
-function setup(){
-  class Root extends React.Component{
+const store=configureStore();
+function setup() {
+  class Root extends Component{
     render(){
-      return (
+      return(
         <Provider store={store}>
-          <App />
+          <View>
+            <Text>
+              nihao2
+            </Text>
+          </View>
         </Provider>
       );
     }
-
   }
   return Root;
 }
 
-module.exprts=setup;
+module.exports=setup;
