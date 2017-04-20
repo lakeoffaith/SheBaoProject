@@ -7,6 +7,6 @@ import {
   AppRegistry,
 } from 'react-native';
 
-import setup from './app/setup';
+import App from './app/containers/App';
 
-AppRegistry.registerComponent('SheBaoProject', setup);
+AppRegistry.registerComponent('SheBaoProject', ()=>App);
