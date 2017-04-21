@@ -1,21 +1,24 @@
 import {
   StyleSheet
 }from 'react-native';
+import {width,height} from '../../global/layout';
 const css=StyleSheet.create({
   body:{
-    flex:1,
     flexDirection:'column',
+    height:height,
   },
   titleContainer:{
     flexDirection:'row',
-    height:30,
+    height:height/16,
     justifyContent:'center',
     alignItems:'center',
     justifyContent:'center',
+
   },
   title:{
     flex:1,
     alignItems:'center',
+
   },
 });
 

@@ -1,27 +1,36 @@
 import {
   StyleSheet
 } from 'react-native';
-
+import {width,height} from '../../global/layout';
+const Sone=height*5/16;
+const Stwo=height*6/16;
 const styles=StyleSheet.create({
       leftTitle:{
-        marginLeft:10,
+        justifyContent:'flex-start',
+        marginLeft:5,
         marginRight:10,
-        width:50,
+        width:80,
+        flexDirection:'row',
+        alignItems:'center',
       },
 
       rightTitle:{
+        justifyContent:'flex-end',
         marginRight:10,
-        marginLeft:10,
+        marginLeft:5,
+        width:80,
+        flexDirection:'row',
+        alignItems:'center',
       },
       scrollViewContainer:{
         flexDirection:'row',
         justifyContent:'center',
         alignItems:'center',
         backgroundColor:'green',
-        height:150,
+        height:Sone,
       },
       othersContainer:{
-        flex:1,
+        height:Stwo,
         padding:5,
         marginTop:30,
         marginBottom:25,
@@ -31,7 +40,7 @@ const styles=StyleSheet.create({
       },
       cuboidContainer:{
         flex:1,
-        height:80,
+        height:(Stwo-50)/2,
         borderWidth:0.4,
         marginTop:10,
         marginBottom:10,

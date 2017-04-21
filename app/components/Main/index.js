@@ -8,6 +8,8 @@ import {
 } from 'react-native';
 import styles from './style.js'
 import css from '../../global/css';
+
+import Icon from 'react-native-vector-icons/MaterialIcons';
 class Main extends React.Component {
   static navigationOptions = {
     tabBarLabel: '首页',
@@ -23,9 +25,9 @@ class Main extends React.Component {
     return (
       <View style={css.body}>
         <View style={[css.titleContainer,{backgroundColor:'gray'}]}>
-            <View style={styles.leftTitle}><Text>成都</Text></View>
-            <View style={css.title}><Text>IJOY</Text></View>
-            <View style={styles.rightTitle}><Text>扫描</Text></View>
+            <View style={styles.leftTitle}><Icon name="place" size={16} color="#900" style={{marginRight:5}}/><Text size={14}>成都</Text></View>
+            <View style={css.title}><Text style={{fontSize:18}}>IJOY</Text></View>
+            <View style={styles.rightTitle}><Icon name="crop-free" size={16} color="#900" style={{marginRight:5}}/></View>
         </View>
         <View style={styles.scrollViewContainer}>
             <Text>图片轮播区域</Text>

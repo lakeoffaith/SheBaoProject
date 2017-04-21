@@ -4,9 +4,12 @@ import {
   Image,
   Button,
   StyleSheet,
-  Text
+  Text,
+  TouchableOpacity
 } from 'react-native';
 import css from '../../global/css';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import AweIcon from 'react-native-vector-icons/FontAwesome';
 class User extends React.Component {
   static navigationOptions = {
     tabBarLabel: '我的'
@@ -14,27 +17,31 @@ class User extends React.Component {
   render() {
     return (
       <View style={css.body}>
-          <View style={css.titleContainer}>
+          <View style={[css.titleContainer,{borderBottomWidth:0.5,}]}>
               <Text>我的</Text>
           </View>
           <View style={styles.headerContainer}>
               <Image source={require('../../img/user.jpg')} style={styles.image}/>
               <View style={styles.profileContainer}>
-                  <Text>18228084571</Text>
+                  <TouchableOpacity   onPress={()=>this.props.navigation.navigate("Login")}><View><Text>登录/注册</Text></View></TouchableOpacity>
               </View>
-              <View style={{width:40,backgroundColor:'red'}}>
-                <Text>跳转</Text>
+              <View style={{width:40}}>
+                <Icon name="trending-flat" size={16} color="#900" style={{marginRight:10,justifyContent:'flex-end'}}/>
               </View>
           </View>
           <View style={styles.item}>
-            <Text>常去药店</Text>
+            <Icon name="store" size={18} color="#900" style={{marginRight:10}} onPress={()=>this.props.navigation.navigate("ShopList")} /><Text>常去药店</Text>
           </View>
           <View style={styles.item}>
-            <Text style={{fontSize:17}}>医保卡号:</Text>
-            <Text style={{fontSize:14}}>7839-08457920</Text>
+            <AweIcon name="vcard" size={16} color="#900" style={{marginRight:10}}/><Text>医保卡号:</Text>
+            <Text >7839-08457920</Text>
           </View>
           <View style={[styles.item,{marginTop:20}]}>
-            <Text style={{fontSize:17}}>我的医保</Text>
+            <Icon name="tab" size={18} color="#900" style={{marginRight:10}}/><Text style={{fontSize:17}}>我的医保</Text>
+            <Icon name="trending-flat" onPress={()=>this.props.navigation.navigate("CardDetail")} size={16} color="#900" style={{marginRight:10,justifyContent:'flex-end'}}/>
+          </View>
+          <View style={[styles.item,{marginTop:20}]}>
+            <Icon name="share" size={18} color="#900" style={{marginRight:10}}/><Text style={{fontSize:17}}>分享</Text>
           </View>
 
       </View>
