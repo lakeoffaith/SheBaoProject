@@ -4,21 +4,53 @@ import {
   Text,
   Image,
   Button,
-  StyleSheet
+  StyleSheet,
+  TextInput,
+  ScrollView,
 } from 'react-native';
 import css from '../../global/css';
+import Icon from 'react-native-vector-icons/MaterialIcons'
 class Login extends React.Component {
   static navigationOptions = {
-    title: 'Home',
-    headerVisible:true,
   }
 
   render() {
     return (
       <View style={css.body}>
-        <View style={[css.titleContainer,{backgroundColor:'gray'}]}>
-            <Button style={css.title} onPress={()=>this.props.navigation.navigate("Root")} title="LOGIN"></Button>
-        </View>
+            <ScrollView
+            keyboardShouldPersistTaps='handled'
+            >
+            <View style={{flexDirection:'row'}}>
+
+
+              <View style={{width:40,height:40,justifyContent:'center',alignItems:'center'}}>
+                <Icon name="account-circle" size={26}/>
+              </View>
+
+              <TextInput
+              style={{height: 40,flex:1}}
+              placeholder="手机号码"
+              keyboardType='phone-pad'
+              />
+            </View>
+            <View style={{flexDirection:'row'}}>
+              <View style={{width:40,height:40,justifyContent:'center',alignItems:'center'}}>
+                <Icon name="lock" size={26}/>
+              </View>
+              <TextInput
+              style={{height: 40,flex:1}}
+              placeholder="验证码"
+              keyboardType='phone-pad'
+              />
+              <View style={{flex:1,height:40,justifyContent:'center',alignItems:'center'}}>
+                <Button title="获取验证码"></Button>
+              </View>
+            </View>
+            <View style={{flexDirection:'row',justifyContent:'center',marginTop:30}}>
+              <Button  title="登   录" style={{width:200}} onPress={()=>this.props.navigation.navigate("Main")}/>
+            </View>
+            </ScrollView>
+
 
       </View>
     );

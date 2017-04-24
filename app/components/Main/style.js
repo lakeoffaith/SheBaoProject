@@ -24,23 +24,20 @@ const styles=StyleSheet.create({
       },
       scrollViewContainer:{
         flexDirection:'row',
-        justifyContent:'center',
-        alignItems:'center',
         backgroundColor:'green',
         height:Sone,
       },
       othersContainer:{
         height:Stwo,
-        padding:5,
         marginTop:30,
         marginBottom:25,
         marginLeft:20,
         marginRight:20,
         flexDirection:'column',
+        backgroundColor:'gray'
       },
       cuboidContainer:{
         flex:1,
-        height:(Stwo-50)/2,
         borderWidth:0.4,
         marginTop:10,
         marginBottom:10,
@@ -49,11 +46,12 @@ const styles=StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'center',
+        backgroundColor:'blue'
       },
       centerCircleContainer:{
         position:'absolute',
-        left:130,
-        top:70,
+        left:(width-20*2-80)/2,
+        top:(Stwo-80)/2,
         width:80,
         height:80,
         borderRadius:20,

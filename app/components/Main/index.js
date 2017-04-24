@@ -8,16 +8,17 @@ import {
 } from 'react-native';
 import styles from './style.js'
 import css from '../../global/css';
-
+import  FocusImage from '../utils/banner';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 class Main extends React.Component {
   static navigationOptions = {
-    tabBarLabel: '首页',
-    showIcon:true,
-    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-    tabBarIcon: (focused,tintColor) => {
-      return <View><Text>nihao</Text></View>
-    },
+    header: {visible: false},
+    tabBar:{
+      label:'首页',
+      icon:({tintColor,focused})=>(
+        <Icon name='home' size={26}/>
+      ),
+    }
   };
 
 
@@ -30,10 +31,10 @@ class Main extends React.Component {
             <View style={styles.rightTitle}><Icon name="crop-free" size={16} color="#900" style={{marginRight:5}}/></View>
         </View>
         <View style={styles.scrollViewContainer}>
-            <Text>图片轮播区域</Text>
+            <FocusImage />
         </View>
         <View style={styles.othersContainer}>
-            <View style={{flexDirection:'row',}}>
+            <View style={{flexDirection:'row',flex:1}}>
               <View style={styles.cuboidContainer}>
                   <View onPress={()=>this.props.navigation.navigate("News")}><Text>政策动态</Text></View>
               </View>
@@ -41,7 +42,7 @@ class Main extends React.Component {
                   <Text>附近促销</Text>
               </View>
             </View>
-            <View style={{flexDirection:'row',}}>
+            <View style={{flexDirection:'row',flex:1}}>
                 <View style={styles.cuboidContainer}>
                   <Text>明细查询</Text>
                 </View>

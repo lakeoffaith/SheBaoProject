@@ -3,8 +3,10 @@ import {
   View,
   Image,
   Button,
-  StyleSheet
+  StyleSheet,
+  Platform,
 } from 'react-native';
+import '../../data/storage';
 import {StackNavigator,TabNavigator,TabView} from 'react-navigation';
 import Main from '../../components/Main';
 import User from '../../components/User';
@@ -18,20 +20,12 @@ const GlobalRoutes={
     name:'login',
     description:'login',
     screen:LoginScreen,
-      headerMode:'screen',
+      headerMode:'none',
   },
   CardDetail:{
     name:'CardDetail',
     description:'card to show number code && pay history',
     screen:CardDetailScreen,
-  }
-};
-const UserStack=StackNavigator({
-  User:{
-    screen:User,
-    navigationOptions:()=>({
-      headerMode:'none',
-    }),
   },
   ShopList:{
     screen:ShopList,
@@ -39,23 +33,25 @@ const UserStack=StackNavigator({
   ShopShow:{
     screen:ShopShow,
   }
-},{
-
-});
+};
 const TabNav = TabNavigator({
-  "首页": {
+  "Main": {
     screen: Main,
   },
   "附近药店":{
     screen:Shop,
   },
-  "我的":{
-    screen:UserStack,
+  "User":{
+    screen:User,
   },
 }, {
   tabBarPosition: 'bottom',
   animationEnabled: false,
   swipeEnabled: false,
+  tabBarOptions:{
+    showIcon:true,
+    activeTintColor: Platform.OS === 'ios' ? '#e91e63' : '#fff',
+  },
 
 });
 
@@ -71,10 +67,10 @@ const MyApp = StackNavigator({
     ...GlobalRoutes,
     Root:{
       screen:TabNav,
-
     }
+
 }, {
     initialRouteName:'Root',
-      headerMode:'none',
+      headerMode:'screen',
 });
 export default MyApp;

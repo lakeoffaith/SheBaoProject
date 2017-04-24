@@ -7,13 +7,15 @@ import {
   StyleSheet
 } from 'react-native';
 import css from '../../global/css';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 class Shop extends React.Component {
   static navigationOptions = {
-    tabBarLabel: '药店',
-    showIcon:true,
-    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-    tabBarIcon: (focused,tintColor) => {
-      return <View><Text>nihao</Text></View>
+    header: {visible: false},
+    tabBar:{
+      label:'首页',
+      icon:({tintColor,focused})=>(
+        <Icon name='store' size={26}/>
+      ),
     },
   };
 

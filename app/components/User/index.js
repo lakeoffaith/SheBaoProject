@@ -12,7 +12,13 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import AweIcon from 'react-native-vector-icons/FontAwesome';
 class User extends React.Component {
   static navigationOptions = {
-    tabBarLabel: '我的'
+    header: {visible: false},
+    tabBar:{
+      label:'首页',
+      icon:({tintColor,focused})=>(
+        <Icon name='perm-identity' size={26}/>
+      ),
+    },
   };
   render() {
     return (
