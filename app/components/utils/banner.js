@@ -30,10 +30,10 @@ class FocusImage extends Component{
         // 图片列表
         let images = this.state.images.map((item,i) => {
             return (
-                <TouchableWithoutFeedback onPress={()=>this._showLog(i)}>
-                    <View style={{width:screenWidth,alignItems:'stretch'}}>
+                <TouchableWithoutFeedback onPress={()=>this._showLog(i)} key={item.key}>
+                    <View style={{width:screenWidth,alignItems:'stretch'}} >
                     <Image
-                        key={item.key}
+
                         source={item.data}
                         resizeMode='stretch'
                       />

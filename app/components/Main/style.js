@@ -2,6 +2,7 @@ import {
   StyleSheet
 } from 'react-native';
 import {width,height} from '../../global/layout';
+import {PrimaryColor,Accent,PrimaryText,SecondText,DividerText,LightPrimaryColor,TextIcons} from '../ijoyComponents/color'
 const Sone=height*5/16;
 const Stwo=height*6/16;
 const styles=StyleSheet.create({
@@ -24,7 +25,6 @@ const styles=StyleSheet.create({
       },
       scrollViewContainer:{
         flexDirection:'row',
-        backgroundColor:'green',
         height:Sone,
       },
       othersContainer:{
@@ -34,11 +34,10 @@ const styles=StyleSheet.create({
         marginLeft:20,
         marginRight:20,
         flexDirection:'column',
-        backgroundColor:'gray'
+
       },
       cuboidContainer:{
         flex:1,
-        borderWidth:0.4,
         marginTop:10,
         marginBottom:10,
         marginLeft:20,
@@ -46,7 +45,8 @@ const styles=StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'center',
-        backgroundColor:'blue'
+        backgroundColor:PrimaryColor,
+        borderRadius:10,
       },
       centerCircleContainer:{
         position:'absolute',
@@ -55,7 +55,7 @@ const styles=StyleSheet.create({
         width:80,
         height:80,
         borderRadius:20,
-        backgroundColor:'red',
+        backgroundColor:LightPrimaryColor,
         justifyContent:'center',
         alignItems:'center',
 

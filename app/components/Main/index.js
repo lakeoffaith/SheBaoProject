@@ -4,7 +4,8 @@ import {
   Text,
   Image,
   Button,
-  StyleSheet
+  StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
 import styles from './style.js'
 import css from '../../global/css';
@@ -35,19 +36,38 @@ class Main extends React.Component {
         </View>
         <View style={styles.othersContainer}>
             <View style={{flexDirection:'row',flex:1}}>
+
               <View style={styles.cuboidContainer}>
-                  <View onPress={()=>this.props.navigation.navigate("News")}><Text>政策动态</Text></View>
+                <TouchableOpacity onPress={()=>this.props.navigation.navigate("News")}>
+                  <View  style={{flexDirection:'row'}}>
+                  <Icon name="assessment" size={16}/>
+                  <Text>政策动态</Text>
+                  </View>
+                  </TouchableOpacity>
               </View>
+
               <View style={styles.cuboidContainer}>
+                  <TouchableOpacity onPress={()=>this.props.navigation.navigate("News")}>
+                  <View onPress={()=>this.props.navigation.navigate("News")}  style={{flexDirection:'row'}}>
+                  <Icon name="shopping-basket" size={16}/>
                   <Text>附近促销</Text>
+                  </View>
+                  </TouchableOpacity>
               </View>
+
             </View>
             <View style={{flexDirection:'row',flex:1}}>
                 <View style={styles.cuboidContainer}>
-                  <Text>明细查询</Text>
+                  <View onPress={()=>this.props.navigation.navigate("News")}  style={{flexDirection:'row'}}>
+                  <Icon name="search" size={16}/>
+                    <Text>明细查询</Text>
+                  </View>
                 </View>
                 <View style={styles.cuboidContainer}>
+                    <View onPress={()=>this.props.navigation.navigate("News")}  style={{flexDirection:'row'}}>
+                    <Icon name="sort" size={16}/>
                     <Text>更多功能</Text>
+                    </View>
                 </View>
             </View>
             <View style={styles.centerCircleContainer}>

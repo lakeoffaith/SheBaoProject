@@ -9,6 +9,7 @@ import {
 import '../../data/storage';
 import {StackNavigator,TabNavigator,TabView} from 'react-navigation';
 import Main from '../../components/Main';
+import News from '../../components/News';
 import User from '../../components/User';
 import Shop from '../../components/Shop';
 import ShopList from '../../components/Shop/list';
@@ -32,6 +33,9 @@ const GlobalRoutes={
   },
   ShopShow:{
     screen:ShopShow,
+  },
+  News:{
+    screen:News,
   }
 };
 const TabNav = TabNavigator({
@@ -50,7 +54,7 @@ const TabNav = TabNavigator({
   swipeEnabled: false,
   tabBarOptions:{
     showIcon:true,
-    activeTintColor: Platform.OS === 'ios' ? '#e91e63' : '#fff',
+    activeTintColor: '#fff',
   },
 
 });

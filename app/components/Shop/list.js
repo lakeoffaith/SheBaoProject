@@ -98,7 +98,7 @@ class Hospital extends React.Component{
      _renderRowView=(rowData)=>{
        return(
           <View>
-              <TouchableWithoutFeedback >
+              <TouchableWithoutFeedback onPress={()=>this.props.navigation.navigate("ShopShow")}>
               <View style={{flexDirection:'row',height:100,padding:15,borderBottomWidth:0.5,borderColor:DividerText}}>
                       <View>
                           <Image source={{uri:"http://tnfs.tngou.net/image"+rowData.img}} style={{width:80,height:60}}/>

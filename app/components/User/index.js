@@ -14,7 +14,7 @@ class User extends React.Component {
   static navigationOptions = {
     header: {visible: false},
     tabBar:{
-      label:'首页',
+      label:'我的',
       icon:({tintColor,focused})=>(
         <Icon name='perm-identity' size={26}/>
       ),
@@ -43,8 +43,7 @@ class User extends React.Component {
             <Text >7839-08457920</Text>
           </View>
           <View style={[styles.item,{marginTop:20}]}>
-            <Icon name="tab" size={18} color="#900" style={{marginRight:10}}/><Text style={{fontSize:17}}>我的医保</Text>
-            <Icon name="trending-flat" onPress={()=>this.props.navigation.navigate("CardDetail")} size={16} color="#900" style={{marginRight:10,justifyContent:'flex-end'}}/>
+            <Icon name="tab" size={18} onPress={()=>this.props.navigation.navigate("CardDetail")} color="#900" style={{marginRight:10}}/><Text style={{fontSize:17}}>我的医保</Text>
           </View>
           <View style={[styles.item,{marginTop:20}]}>
             <Icon name="share" size={18} color="#900" style={{marginRight:10}}/><Text style={{fontSize:17}}>分享</Text>
