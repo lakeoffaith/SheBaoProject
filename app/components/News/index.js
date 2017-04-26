@@ -25,6 +25,23 @@ var resultsCache = {
 };
 var LOADING = {};
 class News extends React.Component{
+
+    static navigationOptions = {
+      title:'所有新闻',
+      header: (navigation, defaultHeader) => {
+        console.log("----");
+        console.log(defaultHeader);
+        console.log(navigation);
+        return(
+          {
+            style:{
+              backgroundColor:PrimaryColor,
+            }
+          }
+        );
+
+        }
+    }
     constructor(){
       super();
 
@@ -77,6 +94,16 @@ class News extends React.Component{
         });
       })
       .then((responseData) => {
+        if(responseData==null){
+            LOADING[query] = false;
+            resultsCache.dataForQuery[query] = undefined;
+            resultsCache.totalForQuery[query] = undefined;
+            this.setState({
+              dataSource: this.state.dataSource.cloneWithRows([]),
+              isLoading: false,
+            });
+            return;
+        }
         LOADING[query] = false;
         resultsCache.totalForQuery[query] = responseData.total;
         resultsCache.dataForQuery[query] = responseData.result;
@@ -195,6 +222,7 @@ class News extends React.Component{
       );
     }
     render(){
+      var circle=this.state.isLoading?<View style={{flexDirection:'row',height:20}}><Text>正在加载</Text></View>:null;
       var content = this.state.dataSource.getRowCount() === 0 ?
         <NoHospitals
           filter={this.state.filter}
@@ -218,6 +246,7 @@ class News extends React.Component{
              <View style={{flexDirection:'row',height:100}}>
                  <FocusImage />
              </View>
+             {circle}
               {content}
            </View>
         );

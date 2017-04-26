@@ -6,12 +6,21 @@ import {
   Button,
   StyleSheet,
   TouchableOpacity,
+  Toast,
 } from 'react-native';
 import styles from './style.js'
 import css from '../../global/css';
 import  FocusImage from '../utils/banner';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import IJoyAmapLocation from '../ijoyComponents/IJoyAmapLocation';
+
 class Main extends React.Component {
+  constructor(props) {
+        super(props);
+        this.state = {
+            city: "成都"
+        };
+  }
   static navigationOptions = {
     header: {visible: false},
     tabBar:{
@@ -22,14 +31,31 @@ class Main extends React.Component {
     }
   };
 
-
+  _initLocation=()=>{
+    this.listener = IJoyAmapLocation.addEventListener((data) => {
+      console.log("-----------");
+      console.log(data);
+      this.setState({city:data.city})
+    });
+    IJoyAmapLocation.startLocation();
+  }
+  _destoryLocation=()=>{
+    IJoyAmapLocation.stopLocation();
+    this.listener.remove();
+  }
+  componentDidMount(){
+    this._initLocation();
+  }
+  componentWillUnmount(){
+    this._destoryLocation();
+  }
   render() {
     return (
       <View style={css.body}>
-        <View style={[css.titleContainer,{backgroundColor:'gray'}]}>
-            <View style={styles.leftTitle}><Icon name="place" size={16} color="#900" style={{marginRight:5}}/><Text size={14}>成都</Text></View>
+        <View style={[css.titleContainer]}>
+            <View style={styles.leftTitle}><Icon name="place" size={16} color="#900" style={{marginRight:5}}/><Text size={14}>{this.state.city}</Text></View>
             <View style={css.title}><Text style={{fontSize:18}}>IJOY</Text></View>
-            <View style={styles.rightTitle}><Icon name="crop-free" size={16} color="#900" style={{marginRight:5}}/></View>
+            <View style={styles.rightTitle}><Icon name="crop-free" onPress={()=>this.props.navigation.navigate("Camera")} size={16} color="#900" style={{marginRight:5}}/></View>
         </View>
         <View style={styles.scrollViewContainer}>
             <FocusImage />
@@ -58,16 +84,20 @@ class Main extends React.Component {
             </View>
             <View style={{flexDirection:'row',flex:1}}>
                 <View style={styles.cuboidContainer}>
-                  <View onPress={()=>this.props.navigation.navigate("News")}  style={{flexDirection:'row'}}>
-                  <Icon name="search" size={16}/>
-                    <Text>明细查询</Text>
-                  </View>
+                  <TouchableOpacity onPress={()=>this.props.navigation.navigate("Search")}>
+                    <View  style={{flexDirection:'row'}}>
+                    <Icon name="search" size={16}/>
+                      <Text>明细查询</Text>
+                    </View>
+                  </TouchableOpacity>
                 </View>
                 <View style={styles.cuboidContainer}>
-                    <View onPress={()=>this.props.navigation.navigate("News")}  style={{flexDirection:'row'}}>
+                  <TouchableOpacity onPress={()=>this.props.navigation.navigate("Others")}>
+                    <View  style={{flexDirection:'row'}}>
                     <Icon name="sort" size={16}/>
                     <Text>更多功能</Text>
                     </View>
+                  </TouchableOpacity>
                 </View>
             </View>
             <View style={styles.centerCircleContainer}>

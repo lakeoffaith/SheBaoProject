@@ -10,6 +10,7 @@ import {
 import css from '../../global/css';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import AweIcon from 'react-native-vector-icons/FontAwesome';
+
 class User extends React.Component {
   static navigationOptions = {
     header: {visible: false},
@@ -23,7 +24,7 @@ class User extends React.Component {
   render() {
     return (
       <View style={css.body}>
-          <View style={[css.titleContainer,{borderBottomWidth:0.5,}]}>
+          <View style={[css.titleContainer]}>
               <Text>我的</Text>
           </View>
           <View style={styles.headerContainer}>

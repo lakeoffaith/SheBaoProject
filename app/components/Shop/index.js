@@ -9,6 +9,7 @@ import {
 import css from '../../global/css';
 import IJoyAmapView from '../ijoyComponents/IJoyAmapView';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+
 class Shop extends React.Component {
   static navigationOptions = {
     header: {visible: false},
@@ -23,7 +24,7 @@ class Shop extends React.Component {
   render() {
     return (
       <View style={css.body}>
-        <View style={[css.titleContainer,{backgroundColor:'gray'}]}>
+        <View style={[css.titleContainer]}>
             <View style={css.title}><Text>附近医院</Text></View>
         </View>
         <View style={{flex:1}}>

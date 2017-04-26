@@ -16,7 +16,7 @@ class FocusImage extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            images : [{key:1,data:require('../../img/bannerOne.jpg')},{key:2,data:require('../../img/bannerTwo.jpg')},{key:3,data:require('../../img/bannerThree.jpg')}],// 使用颜色代替图片
+            images : [{key:0,data:require('../../img/bannerOne.jpg')},{key:1,data:require('../../img/bannerTwo.jpg')},{key:2,data:require('../../img/bannerThree.jpg')}],// 使用颜色代替图片
             selectedImageIndex: 0,
             isNeedRun: true,
         };
@@ -30,7 +30,7 @@ class FocusImage extends Component{
         // 图片列表
         let images = this.state.images.map((item,i) => {
             return (
-                <TouchableWithoutFeedback onPress={()=>this._showLog(i)} key={item.key}>
+                <TouchableWithoutFeedback onPress={()=>console.log(i)} key={item.key}>
                     <View style={{width:screenWidth,alignItems:'stretch'}} >
                     <Image
 
@@ -60,10 +60,10 @@ class FocusImage extends Component{
                     onTouchStart={()=>this._onTouchStart()}
                     onTouchMove={()=>console.log('onTouchMove')}
                     onTouchEnd={()=>this._onTouchEnd()}
-                    onScroll={()=>this._onScroll()}
+
                     ref={(scrollView) => { this._scrollView = scrollView;}}>
 
-                <Animated.View style={{flexDirection:'row'}}>{images}</Animated.View>
+                <View style={{flexDirection:'row'}}>{images}</View>
                 </ScrollView>
                 <View style={{flexDirection:'row',position:'absolute',bottom:20,left:center}}>{circles}</View>
             </View>
@@ -83,11 +83,7 @@ class FocusImage extends Component{
         this._runFocusImage();
     }
 
-    _onScroll(){
-        // this._contentOffsetX = this._scrollView.contentOffset.x;
-        // this._index = Math.round(this._contentOffsetX / screenWidth);
-        ++this._index;
-    }
+
 
     _runFocusImage(){
         if(this._max <= 1){ // 只有一个则不启动定时任务

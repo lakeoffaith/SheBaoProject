@@ -72,7 +72,6 @@ DataRepository.prototype._getFetch=function(reqUrl:string){
          resolve(responseData);
       })
     .catch((error)=>{
-      console.error(error);
       resolve(null);
     })
   }

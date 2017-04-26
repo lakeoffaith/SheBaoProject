@@ -8,6 +8,10 @@ import android.widget.RelativeLayout;
 
 import com.amap.api.maps2d.AMap;
 import com.amap.api.maps2d.MapView;
+import com.amap.api.maps2d.model.BitmapDescriptorFactory;
+import com.amap.api.maps2d.model.LatLng;
+import com.amap.api.maps2d.model.Marker;
+import com.amap.api.maps2d.model.MarkerOptions;
 import com.amap.api.maps2d.overlay.PoiOverlay;
 import com.amap.api.services.core.LatLonPoint;
 import com.amap.api.services.core.PoiItem;
@@ -35,8 +39,19 @@ public class IJoyAmapView extends RelativeLayout implements  PoiSearch.OnPoiSear
         mMapView.onResume();
         if(mMapView!=null){
             aMap=mMapView.getMap();
+            initMarker();
             initSearch();
         }
+    }
+    private void initMarker(){
+        LatLng latLng = new LatLng(30.622118, 104.066113);
+
+        MarkerOptions markerOption = new MarkerOptions();
+        markerOption.position(latLng);
+        markerOption.draggable(true);
+        markerOption.icon(BitmapDescriptorFactory.fromResource(R.mipmap.iconmaker));
+        Marker marker = aMap.addMarker(markerOption);
+        marker.setRotateAngle(30);
     }
     private void initSearch(){
         query=new PoiSearch.Query("药店","","成都");

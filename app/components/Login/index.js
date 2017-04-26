@@ -10,8 +10,24 @@ import {
 } from 'react-native';
 import css from '../../global/css';
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import {PrimaryColor,Accent,PrimaryText,SecondText,DividerText} from '../ijoyComponents/color'
 class Login extends React.Component {
+
   static navigationOptions = {
+    title:'登录界面',
+    header: (navigation, defaultHeader) => {
+      console.log("----");
+      console.log(defaultHeader);
+      console.log(navigation);
+      return(
+        {
+          style:{
+            backgroundColor:PrimaryColor,
+          }
+        }
+      );
+
+      }
   }
 
   render() {

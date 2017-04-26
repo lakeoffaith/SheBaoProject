@@ -12,6 +12,22 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {PrimaryColor,Accent,PrimaryText,SecondText,DividerText,LightPrimaryColor,TextIcons} from '../ijoyComponents/color'
 import {width,height} from '../../global/layout';
 class Show extends React.Component {
+  static navigationOptions = {
+    title:'单个药店',
+    header: (navigation, defaultHeader) => {
+      console.log("----");
+      console.log(defaultHeader);
+      console.log(navigation);
+      return(
+        {
+          style:{
+            backgroundColor:PrimaryColor,
+          }
+        }
+      );
+
+      }
+  }
   render() {
     return (
       <View style={css.body}>

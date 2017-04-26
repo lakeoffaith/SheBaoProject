@@ -7,8 +7,24 @@ import {
   StyleSheet
 } from 'react-native';
 import css from '../../global/css';
+import {PrimaryColor,Accent,PrimaryText,SecondText,DividerText} from '../ijoyComponents/color'
 class CardDetail extends React.Component {
+  static navigationOptions = {
+    title:'医保卡',
+    header: (navigation, defaultHeader) => {
+      console.log("----");
+      console.log(defaultHeader);
+      console.log(navigation);
+      return(
+        {
+          style:{
+            backgroundColor:PrimaryColor,
+          }
+        }
+      );
 
+      }
+  }
 
   render() {
     return (
