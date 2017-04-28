@@ -73,8 +73,8 @@ class Main extends React.Component {
               </View>
 
               <View style={styles.cuboidContainer}>
-                  <TouchableOpacity onPress={()=>this.props.navigation.navigate("News")}>
-                  <View onPress={()=>this.props.navigation.navigate("News")}  style={{flexDirection:'row'}}>
+                  <TouchableOpacity onPress={()=>this.props.navigation.navigate("HotShopList")}>
+                  <View  style={{flexDirection:'row'}}>
                   <Icon name="shopping-basket" size={16}/>
                   <Text>附近促销</Text>
                   </View>

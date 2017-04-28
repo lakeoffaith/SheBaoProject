@@ -36,8 +36,18 @@ class Show extends React.Component {
               <Image source={require('../../img/store.jpg')} style={styles.image}/>
             </View>
             <View style={styles.InfoContainer}>
-               <Text><Text style={{color:PrimaryText}}>中洋大药房</Text> <Text style={{color:SecondText}}>好评</Text></Text>
-               <Text style={{color:SecondText}}>成都市人和大道三路口站旁</Text>
+               <Text style={{color:PrimaryText}}>中洋大药房</Text>
+               <View style={{flexDirection:'row',flex:1}}>
+                 <Icon name="star" color={Accent}/>
+                 <Icon name="star" color={Accent}/>
+                 <Icon name="star" color={Accent}/>
+                 <Icon name="star" color={Accent}/>
+                 <Icon name="star-half" color={Accent}/>
+               </View>
+
+               <View style={{flexDirection:'row',height:40 }}>
+               <Icon name="location-on" /><Text style={{color:SecondText}}>成都市人和大道三路口站旁</Text>
+               </View>
             </View>
             <View style={styles.ScoreContainer}>
                 <Text style={{color:PrimaryText}}>90</Text>
@@ -79,7 +89,7 @@ class Show extends React.Component {
                            <Text style={{color:PrimaryText}}>感冒药</Text>
                            <View style={{flexDirection:'row'}}>
                                 <View style={{width:50}}>
-                                  <Text>52.90</Text>
+                                  <Text style={{textDecorationLine:'line-through'}}>52.90</Text>
                                   <Text>32.90</Text>
                                 </View>
                                 <View style={styles.DragNumberContainer}>
@@ -157,15 +167,15 @@ const styles=StyleSheet.create({
       flexDirection:'column',
       paddingLeft:10,
       paddingRight:10,
+      paddingTop:20,
       padding:10,
-      justifyContent:'center',
     },
     ScoreContainer:{
+      paddingTop:20,
       flexDirection:'column',
       alignItems:'center',
       width:80,
       alignItems:'center',
-      justifyContent:'center',
     },
     TagsContiner:{
       flexDirection:'row',

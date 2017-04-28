@@ -43,7 +43,6 @@ export default class BadInstagramCloneApp extends Component {
     return (
       <View style={styles.container}>
 
-        <Text style={ [{color:"red"},{fontSize:16}] }>{this.state.code}</Text>
         <Camera
           ref={(cam) => {
             this.camera = cam;
@@ -70,18 +69,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
+    justifyContent:'center',
   },
   preview: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center'
+    width:200,
+    height:200,
+    alignSelf:'center',
+
   },
   capture: {
-    flex: 0,
+    position:'absolute',
+    bottom:10,
+    left:(200-60)/2,
     backgroundColor: '#fff',
     borderRadius: 5,
     color: '#000',
-    padding: 10,
-    margin: 40
+
   }
 });

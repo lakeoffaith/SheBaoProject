@@ -11,11 +11,14 @@ import {StackNavigator,TabNavigator,TabView} from 'react-navigation';
 import Main from '../../components/Main';
 import Camera from '../../components/Main/Code';
 import Others from '../../components/Main/Others';
+import OtherShow from '../../components/Main/Others/show';
 import Search from '../../components/Main/Search';
+import SearchDetail from '../../components/Main/SearchDetail';
 import News from '../../components/News';
 import User from '../../components/User';
 import Shop from '../../components/Shop';
 import ShopList from '../../components/Shop/list';
+import HotShopList from '../../components/Shop/hot';
 import ShopShow from '../../components/Shop/show';
 import LoginScreen from '../../components/Login';
 import CardDetailScreen from '../../components/CardDetail';
@@ -37,6 +40,9 @@ const GlobalRoutes={
   ShopList:{
     screen:ShopList,
   },
+  HotShopList:{
+    screen:HotShopList,
+  },
   ShopShow:{
     screen:ShopShow,
   },
@@ -49,8 +55,14 @@ const GlobalRoutes={
   Others:{
     screen:Others,
   },
+  OtherShow:{
+    screen:OtherShow,
+  },
   Search:{
     screen:Search,
+  },
+  SearchDetail:{
+    screen:SearchDetail,
   }
 };
 const TabNav = TabNavigator({
@@ -87,9 +99,8 @@ const MyApp = StackNavigator({
     Root:{
       screen:TabNav,
     }
-
 }, {
-    initialRouteName:'Root',
+    initialRouteName:'Others',
       headerMode:'screen',
       header:{
           style:{

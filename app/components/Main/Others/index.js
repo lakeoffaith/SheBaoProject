@@ -91,7 +91,7 @@ export default class Others extends Component {
               </View>
               <View style={{flexDirection:'row',flex:1,paddingTop:10,}}>
                 <View style={{marginLeft:10,marginRight:10,width:70,height:40,backgroundColor:PrimaryColor,borderRadius:10,flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
-                    <Icon name="search" size={18}></Icon>
+                    <Icon onPress={()=>{this.props.navigation.navigate("OtherShow")}} name="search" size={18}></Icon>
                     <Text style={{fontSize:12}}>四川社保网</Text>
                 </View>
                 <View style={{marginLeft:10,marginRight:10,width:70,height:40,backgroundColor:PrimaryColor,borderRadius:10,flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
