@@ -100,7 +100,7 @@ const MyApp = StackNavigator({
       screen:TabNav,
     }
 }, {
-    initialRouteName:'Others',
+    initialRouteName:'Root',
       headerMode:'screen',
       header:{
           style:{
