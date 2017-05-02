@@ -10,7 +10,8 @@ import {
 import css from '../../global/css';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import AweIcon from 'react-native-vector-icons/FontAwesome';
-
+import DataRepository from '../../data/DataRepository';
+const repository=new DataRepository();
 class User extends React.Component {
   static navigationOptions = {
     header: {visible: false},
@@ -21,6 +22,25 @@ class User extends React.Component {
       ),
     },
   };
+  constructor(props){
+    super(props);
+    this.state={
+      user:null,
+    };
+  };
+  componentDidMount(){
+    //获取token,
+    var get="token";
+    var save="user";
+      repository._getFetch('/apiLogin/getUserByToken?',"token","currentUser")
+      .then(ret=>{
+        this.setState({user:ret});
+      })
+    .catch(error=>{
+      alert(error);
+    })
+    .done();
+  };
   render() {
     return (
       <View style={css.body}>
@@ -30,7 +50,11 @@ class User extends React.Component {
           <View style={styles.headerContainer}>
               <Image source={require('../../img/user.jpg')} style={styles.image}/>
               <View style={styles.profileContainer}>
-                  <TouchableOpacity   onPress={()=>this.props.navigation.navigate("Login")}><View><Text>登录/注册</Text></View></TouchableOpacity>
+                  {this.state.user!=null?
+                    <View><Text>{this.state.user.userName}</Text></View>
+                    :
+                  <TouchableOpacity   onPress={()=>this.props.navigation.navigate("Login")}><View><Text>'登录/注册'</Text></View></TouchableOpacity>
+                  }
               </View>
               <View style={{width:40}}>
                 <Icon name="trending-flat" size={16} color="#900" style={{marginRight:10,justifyContent:'flex-end'}}/>

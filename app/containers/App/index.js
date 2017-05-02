@@ -82,6 +82,7 @@ const TabNav = TabNavigator({
   tabBarOptions:{
     showIcon:true,
     activeTintColor: '#fff',
+
   },
 
 });

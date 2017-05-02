@@ -6,11 +6,13 @@ const HOSPITALLISTURL=url+"hospitalList";
 const PROVINCELISTURL=url+"provinceList";
 const CITYLISTURL=url+"cityList";
 const LOGINURL_POST=url+"login";
+const BASEURL="http://192.168.0.118:8081/shebao";
 export {
   SENDVALIDECODEURL,
   HOSPITALLISTURL,
   REGISTERURL,
   PROVINCELISTURL,
   CITYLISTURL,
-  LOGINURL_POST
+  LOGINURL_POST,
+  BASEURL,
 }
