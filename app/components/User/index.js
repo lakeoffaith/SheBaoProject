@@ -37,7 +37,7 @@ class User extends React.Component {
         this.setState({user:ret});
       })
     .catch(error=>{
-      alert(error);
+
     })
     .done();
   };
@@ -53,7 +53,7 @@ class User extends React.Component {
                   {this.state.user!=null?
                     <View><Text>{this.state.user.userName}</Text></View>
                     :
-                  <TouchableOpacity   onPress={()=>this.props.navigation.navigate("Login")}><View><Text>'登录/注册'</Text></View></TouchableOpacity>
+                  <TouchableOpacity   onPress={()=>this.props.navigation.navigate("Login")}><View><Text>登录/注册</Text></View></TouchableOpacity>
                   }
               </View>
               <View style={{width:40}}>

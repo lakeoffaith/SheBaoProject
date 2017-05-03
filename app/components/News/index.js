@@ -9,11 +9,11 @@ import {
   ActivityIndicator
 } from 'react-native';
 import React, { Component } from 'react';
-import  FocusImage from '../utils/banner';
+import  FocusImage from '../utils/bannerTwo';
 import DataRepository from '../../data/DataRepository'
 import styles from './styles'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import  {HOSPITALLISTURL} from '../../data/rap'
+import  {ImgUrl} from '../../data/rap'
 import {PrimaryColor,Accent,PrimaryText,SecondText,DividerText} from '../ijoyComponents/color'
 const repository=new DataRepository();
 
@@ -83,7 +83,7 @@ class News extends React.Component{
       queryNumber: this.state.queryNumber + 1,
       isLoadingTail: false,
     });
-    repository._getFetch(repository._urlForQueryAndPage(HOSPITALLISTURL,query, 1))
+    repository._getFetch(repository._urlForQueryAndPage("/info/list",query, 1),"","")
       .catch((error) => {
         LOADING[query] = false;
         resultsCache.dataForQuery[query] = undefined;
@@ -106,7 +106,7 @@ class News extends React.Component{
         }
         LOADING[query] = false;
         resultsCache.totalForQuery[query] = responseData.total;
-        resultsCache.dataForQuery[query] = responseData.result;
+        resultsCache.dataForQuery[query] = responseData.data;
         resultsCache.nextPageNumberForQuery[query] = 2;
 
         if (this.state.filter !== query) {
@@ -116,7 +116,7 @@ class News extends React.Component{
 
         this.setState({
           isLoading: false,
-          dataSource: this.state.dataSource.cloneWithRows(responseData.result)
+          dataSource: this.state.dataSource.cloneWithRows(responseData.data)
         });
       })
       .done();
@@ -128,12 +128,12 @@ class News extends React.Component{
               <TouchableWithoutFeedback onPress={()=>this.props.navigation.navigate("ShopShow")}>
               <View style={{flexDirection:'row',height:100,padding:15,borderBottomWidth:0.5,borderColor:DividerText}}>
                       <View>
-                          <Image source={{uri:"http://tnfs.tngou.net/image"+rowData.img}} style={{width:80,height:60}}/>
+                          <Image source={{uri:ImgUrl+rowData.img}} style={{width:80,height:60}}/>
                       </View>
                       <View style={{flex:1,marginLeft:15}}>
-                           <Text style={{color:PrimaryText}}>{rowData.name}</Text>
-                           <Text style={{color:SecondText}}>{rowData.level}</Text >
-                           <Text style={{color:SecondText}} numberOfLines={1}>{rowData.mtype}</Text>
+                           <Text style={{color:PrimaryText}}>{rowData.title}</Text>
+                           <Text style={{color:SecondText}}>{rowData.keywords}</Text >
+                           <Text style={{color:SecondText}} numberOfLines={1}>{rowData.description}</Text>
                       </View>
 
 
@@ -176,7 +176,7 @@ class News extends React.Component{
        });
 
        var page = resultsCache.nextPageNumberForQuery[query];
-         repository._getFetch(repository._urlForQueryAndPage(HOSPITALLISTURL,query, page))
+         repository._getFetch(repository._urlForQueryAndPage("/info/list",query, page),"","")
          .catch((error) => {
            console.error(error);
            LOADING[query] = false;
@@ -189,11 +189,11 @@ class News extends React.Component{
 
            LOADING[query] = false;
            // We reached the end of the list before the expected number of results
-           if (!responseData.result) {
+           if (!responseData.data) {
              resultsCache.totalForQuery[query] = moviesForQuery.length;
            } else {
-             for (var i in responseData.result) {
-               moviesForQuery.push(responseData.result[i]);
+             for (var i in responseData.data) {
+               moviesForQuery.push(responseData.data[i]);
              }
              resultsCache.dataForQuery[query] = moviesForQuery;
              resultsCache.nextPageNumberForQuery[query] += 1;

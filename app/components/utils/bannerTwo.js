@@ -16,7 +16,7 @@ class FocusImage extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            images : [{key:0,data:require('../../img/bannerOne.jpg')},{key:1,data:require('../../img/bannerTwo.jpg')},{key:2,data:require('../../img/bannerThree.jpg')}],// 使用颜色代替图片
+            images : [{key:0,data:require('../../img/newOne.jpg')},{key:1,data:require('../../img/newTwo.jpg')},{key:2,data:require('../../img/newThree.jpg')}],// 使用颜色代替图片
             selectedImageIndex: 0,
             isNeedRun: true,
         };

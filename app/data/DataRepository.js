@@ -13,14 +13,14 @@ DataRepository.prototype._urlForQueryAndPage=(url,query,pageNumber)=>{
       if (query) {
       return (
         url + '?q=' +
-        encodeURIComponent(query) + '&page_limit=10&page=' + pageNumber
-      );
-    } else {
-      // With no query, load latest movies
-      return (
-        url + '?page_limit=10&page=' + pageNumber
-      );
-    }
+        encodeURIComponent(query) + '&pageSize=10&page=' + pageNumber
+        );
+      } else {
+        // With no query, load latest movies
+        return (
+          url + '?pageSize=10&page=' + pageNumber
+        );
+      }
   };
 
 DataRepository.prototype._postFetch=function(reqUrl:string,params:?Object){
@@ -49,7 +49,10 @@ DataRepository.prototype._postFetch=function(reqUrl:string,params:?Object){
 }
 //网络请求和缓存获取数据。
 DataRepository.prototype._getFetch=function(reqUrl:string,getKey:string,saveKey:string){
-  var reqUrl=BASEURL+reqUrl;
+  if(reqUrl.indexOf("http")==-1){
+   reqUrl=BASEURL+reqUrl;
+  }
+
 
   //先通过storage 查找
   //
@@ -65,31 +68,48 @@ DataRepository.prototype._getFetch=function(reqUrl:string,getKey:string,saveKey:
              resolve(ret);
           })
           .catch(error=>{
-            storage.load({
-              key:getKey,
-              autoSync:false,
-            }).then(getPar=>{
-                  if(getKey=='token'){
-                    reqUrl=reqUrl+"&token="+getPar
-                  }
-                  fetch(reqUrl)
-                  .then((response)=>response.json())
-                  .then((responseData)=>{
-                    if(saveKey!=null && saveKey.length>0){
-                      storage.save({
-                        key:saveKey,
-                        rawData:responseData.data,
-                      });
-                    }
-                     resolve(responseData.data);
-                  })
-                  .catch((error)=>{
-                    reject("网络请求失败");
-                  })
-            })
-
-
-
+            if(getKey!=null && getKey.length>0){
+                storage.load({
+                  key:getKey,
+                  autoSync:false,
+                }).then(getPar=>{
+                      if(getKey=='token'){
+                        reqUrl=reqUrl+"&token="+getPar
+                      }
+                      fetch(reqUrl)
+                      .then((response)=>response.json())
+                      .then((responseData)=>{
+                        if(saveKey!=null && saveKey.length>0){
+                          storage.save({
+                            key:saveKey,
+                            rawData:responseData.data,
+                          });
+                        }
+                         resolve(responseData.data);
+                      })
+                      .catch((error)=>{
+                        reject("网络请求失败1");
+                      })
+                })
+                .catch((error)=>{
+                  reject("网络请求失败1");
+                })
+            }else {
+              fetch(reqUrl)
+              .then((response)=>response.json())
+              .then((responseData)=>{
+                if(saveKey!=null && saveKey.length>0){
+                  storage.save({
+                    key:saveKey,
+                    rawData:responseData.data,
+                  });
+                }
+                 resolve(responseData);
+              })
+              .catch((error)=>{
+                reject("网络请求失败2");
+              })
+            }
         })
 
   }

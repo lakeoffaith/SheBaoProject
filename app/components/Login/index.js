@@ -45,8 +45,8 @@ class Login extends React.Component {
   _getCodeByCellPhone=()=>{
     var queryString="/apiLogin/getCodeByPhone?"+"phone="+this.state.phone;
 
-    var get="";
-    var save="";
+    var getKey="";
+    var saveKey="";
     repository._getFetch(queryString,getKey,saveKey)
     .then(result=>{
           alert('验证码为:'+result);
@@ -60,8 +60,8 @@ class Login extends React.Component {
   _loginByPhoneAndCode=()=>{
     _this=this;
     var queryString="/apiLogin/getTokenByPhoneAndCode?"+"phone="+this.state.phone+"&"+"code="+this.state.code;
-    var get="";
-    var save="token";
+    var getKey="";
+    var saveKey="token";
     repository._getFetch(queryString,getKey,saveKey)
     .then(ret=>{
       _this.props.navigation.navigate("Root")
