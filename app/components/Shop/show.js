@@ -14,19 +14,9 @@ import {width,height} from '../../global/layout';
 class Show extends React.Component {
   static navigationOptions = {
     title:'单个药店',
-    header: (navigation, defaultHeader) => {
-      console.log("----");
-      console.log(defaultHeader);
-      console.log(navigation);
-      return(
-        {
-          style:{
-            backgroundColor:PrimaryColor,
-          }
-        }
-      );
-
-      }
+    headerStyle:{
+      backgroundColor:PrimaryColor
+    }
   }
   render() {
     return (

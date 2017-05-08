@@ -80,6 +80,7 @@ public class IJoyAMapLocationModule extends ReactContextBaseJavaModule implement
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Date date = new Date(location.getTime());
             df.format(date);//定位时间
+            map.putString("city",location.getCity());
 
         } else {
             //显示错误信息ErrCode是错误码，errInfo是错误信息，详见错误码表。
@@ -87,7 +88,7 @@ public class IJoyAMapLocationModule extends ReactContextBaseJavaModule implement
                     + location.getErrorCode() + ", errInfo:"
                     + location.getErrorInfo());
         }
-        map.putString("city","广州");
+        if(map.getString("city")==null) map.putString("city","德阳");
         return map;
     }
 }

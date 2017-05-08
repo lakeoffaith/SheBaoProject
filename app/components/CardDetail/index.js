@@ -12,20 +12,11 @@ import {PrimaryColor,Accent,PrimaryText,SecondText,DividerText} from '../ijoyCom
 class CardDetail extends React.Component {
   static navigationOptions = {
     title:'向药店支付',
-    header: (navigation, defaultHeader) => {
-      console.log("----");
-      console.log(defaultHeader);
-      console.log(navigation);
-      return(
-        {
-          style:{
-            backgroundColor:PrimaryColor,
-          }
-        }
-      );
+    headerStyle:{
+      backgroundColor:PrimaryColor
+    }
 
-      }
-  }
+  };
 
   render() {
     return (

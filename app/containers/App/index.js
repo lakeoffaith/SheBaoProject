@@ -1,6 +1,7 @@
-import React from 'react';
+import React,{Component} from 'react';
 import {
   View,
+  Text,
   Image,
   Button,
   StyleSheet,
@@ -8,15 +9,17 @@ import {
 } from 'react-native';
 import '../../data/storage';
 import {StackNavigator,TabNavigator,TabView} from 'react-navigation';
-import Main from '../../components/Main';
+ import Main from '../../components/Main';
+ import User from '../../components/User';
+ import Share from '../../components/User/share';
+ import Shop from '../../components/Shop';
 import Camera from '../../components/Main/Code';
 import Others from '../../components/Main/Others';
 import OtherShow from '../../components/Main/Others/show';
 import Search from '../../components/Main/Search';
 import SearchDetail from '../../components/Main/SearchDetail';
 import News from '../../components/News';
-import User from '../../components/User';
-import Shop from '../../components/Shop';
+import NewsDetail from '../../components/News/detail';
 import ShopList from '../../components/Shop/list';
 import HotShopList from '../../components/Shop/hot';
 import ShopShow from '../../components/Shop/show';
@@ -24,12 +27,12 @@ import LoginScreen from '../../components/Login';
 import CardDetailScreen from '../../components/CardDetail';
 
 
+
 const GlobalRoutes={
   Login:{
     name:'login',
     description:'login',
     screen:LoginScreen,
-      headerMode:'none',
   },
   CardDetail:{
     name:'CardDetail',
@@ -49,6 +52,9 @@ const GlobalRoutes={
   News:{
     screen:News,
   },
+  NewsDetail:{
+    screen:NewsDetail,
+  },
   Camera:{
     screen:Camera,
   },
@@ -63,6 +69,9 @@ const GlobalRoutes={
   },
   SearchDetail:{
     screen:SearchDetail,
+  },
+  Share:{
+    screen:Share
   }
 };
 const TabNav = TabNavigator({
@@ -81,8 +90,6 @@ const TabNav = TabNavigator({
   swipeEnabled: false,
   tabBarOptions:{
     showIcon:true,
-    activeTintColor: '#fff',
-
   },
 
 });
@@ -103,14 +110,5 @@ const MyApp = StackNavigator({
 }, {
     initialRouteName:'Root',
       headerMode:'screen',
-      header:{
-          style:{
-            backgroundColor:'red',
-          }
-      },
-
-
-
-
 });
 export default MyApp;

@@ -12,18 +12,16 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 class Shop extends React.Component {
   static navigationOptions = {
-    header: {visible: false},
-    tabBar:{
-      label:'药店',
-      icon:({tintColor,focused})=>(
-        <Icon name='store' size={26}/>
-      ),
-    },
+    header:null,
+    tabBarLabel: '药店',
+    tabBarIcon: ({ tintColor, focused }) => (
+      <Icon name='store' size={26}/>
+    ),
   };
 
   render() {
     return (
-      <View style={css.body}>
+      <View style={css.lessBody}>
         <View style={[css.titleContainer]}>
             <View style={css.title}><Text>附近医院</Text></View>
         </View>

@@ -28,19 +28,9 @@ class News extends React.Component{
 
     static navigationOptions = {
       title:'所有新闻',
-      header: (navigation, defaultHeader) => {
-        console.log("----");
-        console.log(defaultHeader);
-        console.log(navigation);
-        return(
-          {
-            style:{
-              backgroundColor:PrimaryColor,
-            }
-          }
-        );
-
-        }
+      headerStyle:{
+        backgroundColor:PrimaryColor
+      }
     }
     constructor(){
       super();
@@ -125,7 +115,7 @@ class News extends React.Component{
      _renderRowView=(rowData)=>{
        return(
           <View>
-              <TouchableWithoutFeedback onPress={()=>this.props.navigation.navigate("ShopShow")}>
+              <TouchableWithoutFeedback onPress={()=>this.props.navigation.navigate("NewsDetail")}>
               <View style={{flexDirection:'row',height:100,padding:15,borderBottomWidth:0.5,borderColor:DividerText}}>
                       <View>
                           <Image source={{uri:ImgUrl+rowData.img}} style={{width:80,height:60}}/>

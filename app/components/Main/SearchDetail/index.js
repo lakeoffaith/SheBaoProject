@@ -15,19 +15,9 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 export default class SearchDetail extends Component {
   static navigationOptions = {
     title:'2017年3月款项明细',
-    header: (navigation, defaultHeader) => {
-      console.log("----");
-      console.log(defaultHeader);
-      console.log(navigation);
-      return(
-        {
-          style:{
-            backgroundColor:PrimaryColor,
-          }
-        }
-      );
-
-      }
+    headerStyle:{
+      backgroundColor:PrimaryColor
+    }
   }
   render(){
     return(

@@ -20,19 +20,9 @@ const repository=new DataRepository();
 class Login extends React.Component {
   static navigationOptions = {
     title:'登录界面',
-    header: (navigation, defaultHeader) => {
-      console.log("----");
-      console.log(defaultHeader);
-      console.log(navigation);
-      return(
-        {
-          style:{
-            backgroundColor:PrimaryColor,
-          }
-        }
-      );
-
-      }
+    headerStyle:{
+      backgroundColor:PrimaryColor
+    }
   };
   constructor(props){
     super(props);

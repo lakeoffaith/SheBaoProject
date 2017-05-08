@@ -27,19 +27,9 @@ var LOADING = {};
 class Hospital extends React.Component{
     static navigationOptions = {
       title:'附近促销药店',
-      header: (navigation, defaultHeader) => {
-        console.log("----");
-        console.log(defaultHeader);
-        console.log(navigation);
-        return(
-          {
-            style:{
-              backgroundColor:PrimaryColor,
-            }
-          }
-        );
-
-        }
+      headerStyle:{
+        backgroundColor:PrimaryColor
+      }
     }
     constructor(){
       super();

@@ -14,13 +14,11 @@ import DataRepository from '../../data/DataRepository';
 const repository=new DataRepository();
 class User extends React.Component {
   static navigationOptions = {
-    header: {visible: false},
-    tabBar:{
-      label:'我的',
-      icon:({tintColor,focused})=>(
-        <Icon name='perm-identity' size={26}/>
-      ),
-    },
+    header:null,
+    tabBarLabel: '我的',
+    tabBarIcon: ({ tintColor, focused }) => (
+      <Icon name='perm-identity' size={26}/>
+    ),
   };
   constructor(props){
     super(props);
@@ -28,6 +26,9 @@ class User extends React.Component {
       user:null,
     };
   };
+  _showMessage=()=>{
+    this.props.navigation.navigate('Share');
+  }
   componentDidMount(){
     //获取token,
     var get="token";
@@ -43,7 +44,7 @@ class User extends React.Component {
   };
   render() {
     return (
-      <View style={css.body}>
+      <View style={css.lessBody}>
           <View style={[css.titleContainer]}>
               <Text>我的</Text>
           </View>
@@ -70,9 +71,13 @@ class User extends React.Component {
           <View style={[styles.item,{marginTop:20}]}>
             <Icon name="tab" size={18} onPress={()=>this.props.navigation.navigate("CardDetail")} color="#900" style={{marginRight:10}}/><Text style={{fontSize:17}}>我的医保</Text>
           </View>
+          <TouchableOpacity onPress={()=>this._showMessage()}>
           <View style={[styles.item,{marginTop:20}]}>
+
             <Icon name="share" size={18} color="#900" style={{marginRight:10}}/><Text style={{fontSize:17}}>分享</Text>
+
           </View>
+          </TouchableOpacity>
 
       </View>
     );

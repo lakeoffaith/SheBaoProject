@@ -22,13 +22,11 @@ class Main extends React.Component {
         };
   }
   static navigationOptions = {
-    header: {visible: false},
-    tabBar:{
-      label:'首页',
-      icon:({tintColor,focused})=>(
-        <Icon name='home' size={26}/>
-      ),
-    }
+    header:null,
+    tabBarLabel: '首页',
+    tabBarIcon: ({ tintColor, focused }) => (
+      <Icon name='home' size={26}/>
+    ),
   };
 
   _initLocation=()=>{
@@ -51,7 +49,7 @@ class Main extends React.Component {
   }
   render() {
     return (
-      <View style={css.body}>
+      <View style={css.lessBody}>
         <View style={[css.titleContainer]}>
             <View style={styles.leftTitle}><Icon name="place" size={16} color="#900" style={{marginRight:5}}/><Text size={14}>{this.state.city}</Text></View>
             <View style={css.title}><Text style={{fontSize:18}}>IJOY</Text></View>
@@ -101,7 +99,9 @@ class Main extends React.Component {
                 </View>
             </View>
             <View style={styles.centerCircleContainer}>
+              <TouchableOpacity onPress={()=>this.props.navigation.nvaigate("CardDetail")}>
               <Text style={{fontSize:17,}}>医保卡</Text>
+              </TouchableOpacity>
             </View>
 
         </View>

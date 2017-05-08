@@ -12,18 +12,9 @@ import {PrimaryColor,Accent,PrimaryText,SecondText,DividerText,LightPrimaryColor
 class OtherShow extends React.Component {
   static navigationOptions = {
     title:'四川在线微信',
-    header: (navigation, defaultHeader) => {
-      console.log("----");
-      console.log(defaultHeader);
-      console.log(navigation);
-      return(
-        {
-          style:{
-            backgroundColor:PrimaryColor,
-          }
-        }
-      );
-      }
+    headerStyle:{
+      backgroundColor:PrimaryColor
+    }
   }
 
   render() {

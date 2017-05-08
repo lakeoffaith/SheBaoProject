@@ -13,19 +13,9 @@ import {PrimaryColor,Accent,PrimaryText,SecondText,DividerText} from '../../ijoy
 export default class BadInstagramCloneApp extends Component {
   static navigationOptions = {
     title:'扫描二位码',
-    header: (navigation, defaultHeader) => {
-      console.log("----");
-      console.log(defaultHeader);
-      console.log(navigation);
-      return(
-        {
-          style:{
-            backgroundColor:PrimaryColor,
-          }
-        }
-      );
-
-      }
+    headerStyle:{
+      backgroundColor:PrimaryColor
+    }
   }
   constructor(props) {
         super(props);

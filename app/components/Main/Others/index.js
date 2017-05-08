@@ -14,19 +14,9 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 export default class Others extends Component {
   static navigationOptions = {
     title:'更多功能',
-    header: (navigation, defaultHeader) => {
-      console.log("----");
-      console.log(defaultHeader);
-      console.log(navigation);
-      return(
-        {
-          style:{
-            backgroundColor:PrimaryColor,
-          }
-        }
-      );
-
-      }
+    headerStyle:{
+      backgroundColor:PrimaryColor
+    }
   }
   render(){
     return(
