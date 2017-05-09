@@ -38,7 +38,7 @@ class User extends React.Component {
         this.setState({user:ret});
       })
     .catch(error=>{
-
+      alert(error);
     })
     .done();
   };

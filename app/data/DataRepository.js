@@ -79,13 +79,18 @@ DataRepository.prototype._getFetch=function(reqUrl:string,getKey:string,saveKey:
                       fetch(reqUrl)
                       .then((response)=>response.json())
                       .then((responseData)=>{
-                        if(saveKey!=null && saveKey.length>0){
-                          storage.save({
-                            key:saveKey,
-                            rawData:responseData.data,
-                          });
+                        if(responseData.success){
+                          if(saveKey!=null && saveKey.length>0){
+                            storage.save({
+                              key:saveKey,
+                              rawData:responseData.data,
+                            });
+                          }
+                           resolve(responseData.data);
+                        }else {
+                          reject(responseData.data);
                         }
-                         resolve(responseData.data);
+
                       })
                       .catch((error)=>{
                         reject("网络请求失败1");
