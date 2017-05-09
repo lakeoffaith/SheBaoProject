@@ -9,6 +9,110 @@ function DataRepository(){
   }
   DataRepository.instance=this;
 }
+async function postFetch(url,query){
+    url=BASEURL+url;
+    var token;
+    if(url.indexOf('login')==-1 && url.indexOf('Login')==-1){
+       token= await storage.load({key:'token',autoSync:false});
+       token=token.data;
+    }
+    return result= await fetch(url,{
+      method:'post',
+      headers:{
+        'Accept':'application/json',
+        'Content-Type':'application/json',
+        'token':token
+      },
+      body: JSON.stringify(query).replace(/{|}/gi, "")
+     })
+    .then((response)=>response.json())
+    .then((result)=>{
+      if(result.success){
+        return result;
+      }else {
+        alert('获取数据失败');
+      }
+    })
+    .catch(error=>{
+      alert('网络错误');
+    })
+}
+async function getFetch(url,query){
+    url=BASEURL+url+"?1=1";
+    var token;
+    if(url.indexOf('login')==-1 && url.indexOf('Login')==-1){
+       token= await storage.load({key:'token',autoSync:false});
+       token=token.data;
+       console.log("获取缓存 token="+token);
+    }
+    if(query!=null && query.page!=null && query.page>0)url+="&page="+query.page;
+    if(query!=null && query.pageSize!=null && query.pageSize>0)url+="&pageSize="+query.pageSize;
+    if(query!=null && query.qStr!=null && query.qStr.length>0)url+="&"+query.qStr;
+    console.log(url);
+    return result= await fetch(url,{
+      method:'get',
+      headers:{
+        'Accept':'application/json',
+        'Content-Type':'application/json',
+        'token':token
+      },
+     })
+    .then((response)=>response.json())
+    .then((result)=>{
+      if(result.success){
+        return result;
+      }else {
+        alert('获取数据失败');
+        return null;
+      }
+    })
+    .catch(error=>{
+      alert('网络错误');
+      return null;
+    })
+}
+async function getStorage(key){
+  return await storage.load({
+    key:key,
+    autoSync:false
+  }).then(ret=>{
+      return ret;
+    })
+    .catch(error=>{
+      return null;
+    })
+
+}
+ DataRepository.prototype._fetch=async (demo)=>{
+   if(demo.out.save){
+      if(demo.data!=null && demo.data.page!=null && demo.data.page>0){
+        demo.out.key=demo.out.key+"^"+demo.data.page+"^"+demo.data.pageSize;
+      }
+   }
+  var result;
+  if(demo.type==null || demo.type=='get')result= await getFetch(demo.url,demo.data);
+  else {
+    result= await postFetch(demo.url,demo.data);
+  }
+  //如果 result 为 null或者为 undefined 缓存中去获取
+  console.log(result);
+  if(result ==null || result ==undefined){
+    if(demo.out.save){
+      console.log("获取缓存");
+      result=await getStorage(demo.out.key);
+    }
+  }else if(demo.out.save) {
+    //缓存数据
+    await storage.save({
+      key:demo.out.key,
+      rawData:result,
+    });
+    console.log("存放"+demo.out.key);
+  }
+  console.log(result);
+  return result;
+    //判断url 是否需要token
+}
 DataRepository.prototype._urlForQueryAndPage=(url,query,pageNumber)=>{
       if (query) {
       return (

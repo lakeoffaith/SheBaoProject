@@ -13,6 +13,8 @@ import css from '../../global/css';
 import  FocusImage from '../utils/banner';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import IJoyAmapLocation from '../ijoyComponents/IJoyAmapLocation';
+import DataRepository from '../../data/DataRepository';
+const respository=new DataRepository();
 
 class Main extends React.Component {
   constructor(props) {
@@ -99,7 +101,7 @@ class Main extends React.Component {
                 </View>
             </View>
             <View style={styles.centerCircleContainer}>
-              <TouchableOpacity onPress={()=>this.props.navigation.nvaigate("CardDetail")}>
+              <TouchableOpacity onPress={()=>this.props.navigation.navigate("CardDetail")}>
               <Text style={{fontSize:17,}}>医保卡</Text>
               </TouchableOpacity>
             </View>

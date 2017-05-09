@@ -40,77 +40,52 @@ class News extends React.Component{
         rowHasChanged: (row1, row2) => row1 !== row2,
         }),
         isLoading: false,
-       isLoadingTail: false,
-       filter: '',
-      queryNumber: 0,
+        isLoadingTail: false,
+        queryNumber: 0,
       }
     }
    	componentDidMount(){
-   		this._fetchHospital('');
+   		this._fetchHospital();
    	}
-    _fetchHospital=(query)=>{
+    _fetchHospital=async ()=>{
       this.timeoutID = null;
-
-    this.setState({filter: query});
-
-    var cachedResultsForQuery = resultsCache.dataForQuery[query];
-    if (cachedResultsForQuery) {
-      if (!LOADING[query]) {
-        this.setState({
-          dataSource: this.state.dataSource.cloneWithRows(cachedResultsForQuery),
-          isLoading: false
-        });
-      } else {
-        this.setState({isLoading: true});
-      }
-      return;
-    }
-
-    LOADING[query] = true;
-    resultsCache.dataForQuery[query] = null;
     this.setState({
       isLoading: true,
       queryNumber: this.state.queryNumber + 1,
       isLoadingTail: false,
     });
-    repository._getFetch(repository._urlForQueryAndPage("/info/list",query, 1),"","")
-      .catch((error) => {
-        LOADING[query] = false;
-        resultsCache.dataForQuery[query] = undefined;
 
-        this.setState({
-          dataSource: this.state.dataSource.cloneWithRows([]),
-          isLoading: false,
-        });
-      })
-      .then((responseData) => {
-        if(responseData==null){
-            LOADING[query] = false;
-            resultsCache.dataForQuery[query] = undefined;
-            resultsCache.totalForQuery[query] = undefined;
-            this.setState({
-              dataSource: this.state.dataSource.cloneWithRows([]),
-              isLoading: false,
-            });
-            return;
-        }
-        LOADING[query] = false;
-        resultsCache.totalForQuery[query] = responseData.total;
-        resultsCache.dataForQuery[query] = responseData.data;
-        resultsCache.nextPageNumberForQuery[query] = 2;
-
-        if (this.state.filter !== query) {
-          // do not update state if the query is stale
-          return;
-        }
-
-        this.setState({
-          isLoading: false,
-          dataSource: this.state.dataSource.cloneWithRows(responseData.data)
-        });
-      })
-      .done();
-    }
+    const demo={type:'get',url:'/info/list',data:{qStr:'q=',page:1,pageSize:10},out:{save:true,key:'News'}};
+    var resultDemo=await repository._fetch(demo);
+    console.log(resultDemo);
+    this.setState({
+        isLoading: false,
+        dataSource: this.state.dataSource.cloneWithRows(resultDemo.data)
+      });
+    // if(resultDemo==null){
+    //   LOADING[query] = false;
+    //   resultsCache.dataForQuery[query] = undefined;
+    //   resultsCache.totalForQuery[query] = undefined;
+    //
+    //   this.setState({
+    //     dataSource: this.state.dataSource.cloneWithRows([]),
+    //     isLoading: false,
+    //   });
+    // }else{
+    //   LOADING[query] = false;
+    //   resultsCache.totalForQuery[query] = resultDemo.total;
+    //   resultsCache.dataForQuery[query] = resultDemo.data;
+    //   resultsCache.nextPageNumberForQuery[query] = 2;
+    //   if (this.state.filter !== query) {
+    //     // do not update state if the query is stale
+    //     return;
+    //   }
+    //   this.setState({
+    //     isLoading: false,
+    //     dataSource: this.state.dataSource.cloneWithRows(resultDemo.data)
+    //   });
+    // }
+  }
 
      _renderRowView=(rowData)=>{
        return(
@@ -148,7 +123,8 @@ class News extends React.Component{
 
        return <ActivityIndicator style={styles.scrollSpinner} />;
      }
-     _onEndReached=()=>{
+     _onEndReached=async ()=>{
+       console.log("触发onEndReached");
        var query = this.state.filter;
        if (!this.hasMore() || this.state.isLoadingTail) {
          // We're already fetching or have all the elements so noop
@@ -166,40 +142,31 @@ class News extends React.Component{
        });
 
        var page = resultsCache.nextPageNumberForQuery[query];
-         repository._getFetch(repository._urlForQueryAndPage("/info/list",query, page),"","")
-         .catch((error) => {
-           console.error(error);
-           LOADING[query] = false;
-           this.setState({
-             isLoadingTail: false,
-           });
-         })
-         .then((responseData) => {
-           var moviesForQuery = resultsCache.dataForQuery[query].slice();
+       const demo={type:'get',url:'/info/list',data:{qStr:'q='+query,page:1,pageSize:10},out:{save:true,key:'News'}};
+       var resultDemo=await repository._fetch(demo);
+       if(resultDemo==null){
+         LOADING[query] = false;
+         resultsCache.dataForQuery[query] = undefined;
+         resultsCache.totalForQuery[query] = undefined;
 
-           LOADING[query] = false;
-           // We reached the end of the list before the expected number of results
-           if (!responseData.data) {
-             resultsCache.totalForQuery[query] = moviesForQuery.length;
-           } else {
-             for (var i in responseData.data) {
-               moviesForQuery.push(responseData.data[i]);
-             }
-             resultsCache.dataForQuery[query] = moviesForQuery;
-             resultsCache.nextPageNumberForQuery[query] += 1;
-           }
-
-           if (this.state.filter !== query) {
-             // do not update state if the query is stale
-             return;
-           }
-
-           this.setState({
-             isLoadingTail: false,
-             dataSource: this.state.dataSource.cloneWithRows(resultsCache.dataForQuery[query]),
-           });
-         })
-         .done();
+         this.setState({
+           dataSource: this.state.dataSource.cloneWithRows([]),
+           isLoading: false,
+         });
+       }else{
+         LOADING[query] = false;
+         resultsCache.totalForQuery[query] = resultDemo.total;
+         resultsCache.dataForQuery[query] = resultDemo.data;
+         resultsCache.nextPageNumberForQuery[query] = 2;
+         if (this.state.filter !== query) {
+           // do not update state if the query is stale
+           return;
+         }
+         this.setState({
+           isLoading: false,
+           dataSource: this.state.dataSource.cloneWithRows(resultDemo.data)
+         });
+       }
      }
      hasMore=()=> {
       var query = this.state.filter;

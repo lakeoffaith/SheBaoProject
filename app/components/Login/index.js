@@ -32,36 +32,18 @@ class Login extends React.Component {
     };
   };
 
-  _getCodeByCellPhone=()=>{
-    var queryString="/apiLogin/getCodeByPhone?"+"phone="+this.state.phone;
+  _getCodeByCellPhone=async ()=>{
+    var phone=this.state.phone;
+    const demo={type:'get',url:'/apiLogin/getCodeByPhone',data:{qStr:'phone='+phone},out:{save:false}};
+    const result=await repository._fetch(demo);
+    alert(result.data);
 
-    var getKey="";
-    var saveKey="";
-    repository._getFetch(queryString,getKey,saveKey)
-    .then(result=>{
-          alert('验证码为:'+result);
-      }
-    )
-    .catch((error)=>{
-          alert(error);
-        })
-    .done();
-  };
-  _loginByPhoneAndCode=()=>{
-    _this=this;
-    var queryString="/apiLogin/getTokenByPhoneAndCode?"+"phone="+this.state.phone+"&"+"code="+this.state.code;
-    var getKey="";
-    var saveKey="token";
-    repository._getFetch(queryString,getKey,saveKey)
-    .then(ret=>{
-      _this.props.navigation.navigate("Root")
-    })
-    .catch((error)=>{
-        alert(error);
-      })
-    .done();
-
-
+    }
+  _loginByPhoneAndCode=async ()=>{
+    var phone=this.state.phone;
+    var code=this.state.code;
+    const demo={type:'get',url:'/apiLogin/getTokenByPhoneAndCode',data:{qStr:'phone='+phone+'&'+'code='+code},out:{save:true,key:'token'}};
+    repository._fetch(demo);
   }
   render() {
     return (
