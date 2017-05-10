@@ -25,10 +25,10 @@ var resultsCache = {
   pageSize:10,
 };
 var LOADING;
-class News extends React.Component{
+class PayHistory extends React.Component{
 
     static navigationOptions = {
-      title:'所有新闻',
+      title:'历史消费信息',
       headerStyle:{
         backgroundColor:PrimaryColor
       }
@@ -94,20 +94,11 @@ class News extends React.Component{
      _renderRowView=(rowData)=>{
        return(
           <View>
-              <TouchableWithoutFeedback onPress={()=>this.props.navigation.navigate("NewsDetail",{item:rowData})}>
-              <View style={{flexDirection:'row',height:100,padding:15,borderBottomWidth:0.5,borderColor:DividerText}}>
-                      <View>
-                          <Image source={{uri:ImgUrl+rowData.img}} style={{width:80,height:60}}/>
-                      </View>
-                      <View style={{flex:1,marginLeft:15}}>
-                           <Text style={{color:PrimaryText}}>{rowData.title}</Text>
-                           <Text style={{color:SecondText}}>{rowData.keywords}</Text >
-                           <Text style={{color:SecondText}} numberOfLines={1}>{rowData.description}</Text>
-                      </View>
-
-
+              <View style={{flexDirection:'row',height:50,padding:15,borderBottomWidth:0.5,borderColor:DividerText,justifyContent:'space-between'}}>
+                  <View ><Text style={{color:PrimaryText}}>xxx药店</Text></View>
+                  <View ><Text style={{color:SecondText}}>-25</Text></View>
+                  <View ><Text style={{color:SecondText}} numberOfLines={1}>2017-07-09:13:25:24</Text></View>
               </View>
-              </TouchableWithoutFeedback>
           </View>
        );
      }
@@ -190,9 +181,6 @@ class News extends React.Component{
 
         return(
            <View style={styles.container}>
-             <View style={{flexDirection:'row',height:100}}>
-                 <FocusImage />
-             </View>
              {circle}
               {content}
            </View>
@@ -220,4 +208,4 @@ class NoHospitals extends React.Component {
   }
 }
 
-module.exports=News;
+module.exports=PayHistory;

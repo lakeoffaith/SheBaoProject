@@ -63,48 +63,38 @@ class Main extends React.Component {
         <View style={styles.othersContainer}>
             <View style={{flexDirection:'row',flex:1}}>
 
-              <View style={styles.cuboidContainer}>
-                <TouchableOpacity onPress={()=>this.props.navigation.navigate("News")}>
+                <TouchableOpacity onPress={()=>this.props.navigation.navigate("News")} style={styles.cuboidContainer}>
                   <View  style={{flexDirection:'row'}}>
                   <Icon name="assessment" size={16}/>
                   <Text>政策动态</Text>
                   </View>
                   </TouchableOpacity>
-              </View>
 
-              <View style={styles.cuboidContainer}>
-                  <TouchableOpacity onPress={()=>this.props.navigation.navigate("HotShopList")}>
+                  <TouchableOpacity style={styles.cuboidContainer} onPress={()=>this.props.navigation.navigate("HotShopList")}>
                   <View  style={{flexDirection:'row'}}>
                   <Icon name="shopping-basket" size={16}/>
                   <Text>附近促销</Text>
                   </View>
                   </TouchableOpacity>
-              </View>
 
             </View>
             <View style={{flexDirection:'row',flex:1}}>
-                <View style={styles.cuboidContainer}>
-                  <TouchableOpacity onPress={()=>this.props.navigation.navigate("Search")}>
+                  <TouchableOpacity  style={styles.cuboidContainer} onPress={()=>this.props.navigation.navigate("Search")}>
                     <View  style={{flexDirection:'row'}}>
                     <Icon name="search" size={16}/>
                       <Text>明细查询</Text>
                     </View>
                   </TouchableOpacity>
-                </View>
-                <View style={styles.cuboidContainer}>
-                  <TouchableOpacity onPress={()=>this.props.navigation.navigate("Others")}>
+                  <TouchableOpacity style={styles.cuboidContainer} onPress={()=>this.props.navigation.navigate("Others")}>
                     <View  style={{flexDirection:'row'}}>
                     <Icon name="sort" size={16}/>
                     <Text>更多功能</Text>
                     </View>
                   </TouchableOpacity>
-                </View>
             </View>
-            <View style={styles.centerCircleContainer}>
-              <TouchableOpacity onPress={()=>this.props.navigation.navigate("CardDetail")}>
+              <TouchableOpacity style={styles.centerCircleContainer} onPress={()=>this.props.navigation.navigate("CardDetail")}>
               <Text style={{fontSize:17,}}>医保卡</Text>
               </TouchableOpacity>
-            </View>
 
         </View>
       </View>

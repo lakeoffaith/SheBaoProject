@@ -69,6 +69,11 @@ class User extends React.Component {
           <View style={[styles.item,{marginTop:20}]}>
             <Icon name="tab" size={18} onPress={()=>this.props.navigation.navigate("CardDetail")} color="#900" style={{marginRight:10}}/><Text style={{fontSize:17}}>我的医保</Text>
           </View>
+          <TouchableOpacity onPress={()=>this.props.navigation.navigate("PayHistory")}>
+          <View style={[styles.item,{marginTop:20}]}>
+            <Icon name="tab" size={18} color="#900" style={{marginRight:10}}/><Text style={{fontSize:17}}>历史消费</Text>
+          </View>
+          </TouchableOpacity>
           <TouchableOpacity onPress={()=>this._showMessage()}>
           <View style={[styles.item,{marginTop:20}]}>
 

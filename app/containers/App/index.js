@@ -25,6 +25,7 @@ import HotShopList from '../../components/Shop/hot';
 import ShopShow from '../../components/Shop/show';
 import LoginScreen from '../../components/Login';
 import CardDetailScreen from '../../components/CardDetail';
+import PayHistoryScreen from '../../components/CardDetail/payHistory';
 
 
 
@@ -62,7 +63,7 @@ const GlobalRoutes={
     screen:Others,
   },
   OtherShow:{
-    screen:OtherShow,
+    screen:OtherShow,PayHistoryScreen
   },
   Search:{
     screen:Search,
@@ -72,7 +73,10 @@ const GlobalRoutes={
   },
   Share:{
     screen:Share
-  }
+  },
+  PayHistory:{
+    screen:PayHistoryScreen
+  },
 };
 const TabNav = TabNavigator({
   "Main": {

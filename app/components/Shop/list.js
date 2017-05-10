@@ -41,7 +41,7 @@ class Hospital extends React.Component{
         isLoading: false,
        isLoadingTail: false,
        filter: '',
-      queryNumber: 0,
+      // queryNumber: 0,
       }
     }
    	componentDidMount(){
