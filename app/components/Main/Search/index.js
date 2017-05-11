@@ -11,6 +11,7 @@ import {
 import {PrimaryColor,Accent,PrimaryText,SecondText,DividerText} from '../../ijoyComponents/color'
 import css from '../../../global/css';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import ModalDropdown from 'react-native-modal-dropdown';
 export default class Others extends Component {
   static navigationOptions = {
     title:'明细查询',
@@ -27,7 +28,9 @@ export default class Others extends Component {
     }
   }
 
-
+  componentDidMount(){
+    this.refs.dropdown.select(0);
+  }
   render(){
       return (
         <View style={css.lessBody}>
@@ -39,7 +42,14 @@ export default class Others extends Component {
                 <Text style={{fontSize:10}} onPress={()=>this.setState({completed:false})}>未缴纳</Text>
               </View>
               <View style={{flex:1,alignItems:'flex-end'}}>
-                <Text>2017</Text>
+                  <ModalDropdown
+                  ref='dropdown'
+                  textStyle = {{fontSize:16}}
+                  dropdownStyle = {{width:60,borderWidth:2}}
+                  style={{height:40,paddingTop:10}}
+                  options={['2017', '2016','2015','2014']}
+                  onSelect={(idx, value) =>alert(idx+value)}
+                  />
               </View>
           </View>
           <Ijoy query={{completed:this.state.completed,year:this.state.year}} _this={this}>
