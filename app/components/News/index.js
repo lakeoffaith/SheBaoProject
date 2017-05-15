@@ -72,6 +72,7 @@ class News extends React.Component{
       })
     const demo={type:'get',url:'/info/list',data:{qStr:'q=',page:1,pageSize:10},out:{save:true,key:'News'}};
     var resultDemo=await repository._fetch(demo);
+    console.log(resultDemo);
     if(resultDemo==null){
       LOADING=false;
       resultsCache.data=undefined;

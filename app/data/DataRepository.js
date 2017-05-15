@@ -39,11 +39,19 @@ async function postFetch(url,query){
 }
 async function getFetch(url,query){
     url=BASEURL+url+"?1=1";
+    console.log(url);
     var token;
     if(url.indexOf('login')==-1 && url.indexOf('Login')==-1){
        token= await storage.load({key:'token',autoSync:false});
-       token=token.data;
-       console.log("获取缓存 token="+token);
+       if(token){
+         token=token.data;
+         console.log("获取缓存 token="+token);
+       }else{
+         token="";
+         console.log("用户没有登录");
+         return null;
+       }
+
     }
     if(query!=null && query.page!=null && query.page>0)url+="&page="+query.page;
     if(query!=null && query.pageSize!=null && query.pageSize>0)url+="&pageSize="+query.pageSize;

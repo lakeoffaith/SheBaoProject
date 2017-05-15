@@ -8,6 +8,7 @@ import {
   ScrollView,
 } from 'react-native';
 import css from '../../global/css';
+import Barcode from 'react-native-barcode-builder';
 import {PrimaryColor,Accent,PrimaryText,SecondText,DividerText} from '../ijoyComponents/color'
 class CardDetail extends React.Component {
   static navigationOptions = {
@@ -15,16 +16,14 @@ class CardDetail extends React.Component {
     headerStyle:{
       backgroundColor:PrimaryColor
     }
-
   };
-
   render() {
     return (
       <View style={css.lessBody}>
-            <View style={{flex:1,flexDirection:'column',borderWidth:1,margin:20}}>
-                <View style={{height:80,margin:40,borderWidth:1,backgroundColor:'green',flexDirection:'column',justifyContent:'center'}}>
-                    <Text>11112443511124435111244351</Text>
-                </View>
+            <View style={{flex:1,flexDirection:'column',margin:60}}>
+
+                    <Barcode value="Hello World" format="CODE128" />
+
 
             </View>
 
