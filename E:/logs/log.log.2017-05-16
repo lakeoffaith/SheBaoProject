@@ -1,0 +1,28 @@
+2017-05-16 11:22:56  [ http-nio-8080-exec-7:89713553 ] - [ DEBUG ]  检查验证码
+2017-05-16 11:22:56  [ http-nio-8080-exec-7:89714018 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,last_login_time,login_type,token FROM logininfo WHERE ( user_id = ? and token = ? ) 
+2017-05-16 11:22:56  [ http-nio-8080-exec-7:89714125 ] - [ DEBUG ]  ==> Parameters: 25(String), MjU6MTQ5NDgxNTI5NjMyNw==(String)
+2017-05-16 11:22:57  [ http-nio-8080-exec-7:89714558 ] - [ DEBUG ]  <==      Total: 1
+2017-05-16 11:22:57  [ http-nio-8080-exec-7:89714573 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_name FROM user WHERE id = ? 
+2017-05-16 11:22:57  [ http-nio-8080-exec-7:89714574 ] - [ DEBUG ]  ==> Parameters: 25(Integer)
+2017-05-16 11:22:57  [ http-nio-8080-exec-7:89714977 ] - [ DEBUG ]  <==      Total: 1
+2017-05-16 11:30:03  [ http-nio-8080-exec-9:90140907 ] - [ DEBUG ]  检查验证码
+2017-05-16 11:30:03  [ http-nio-8080-exec-9:90141010 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,last_login_time,login_type,token FROM logininfo WHERE ( user_id = ? and token = ? ) 
+2017-05-16 11:30:03  [ http-nio-8080-exec-9:90141011 ] - [ DEBUG ]  ==> Parameters: 25(String), MjU6MTQ5NDgxNTI5NjMyNw==(String)
+2017-05-16 11:30:03  [ http-nio-8080-exec-9:90141031 ] - [ DEBUG ]  <==      Total: 1
+2017-05-16 11:30:03  [ http-nio-8080-exec-9:90141057 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_name FROM user WHERE id = ? 
+2017-05-16 11:30:03  [ http-nio-8080-exec-9:90141057 ] - [ DEBUG ]  ==> Parameters: 25(Integer)
+2017-05-16 11:30:03  [ http-nio-8080-exec-9:90141064 ] - [ DEBUG ]  <==      Total: 1
+2017-05-16 11:43:20  [ http-nio-8080-exec-1:90937232 ] - [ DEBUG ]  检查验证码
+2017-05-16 11:43:20  [ http-nio-8080-exec-1:90937283 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,last_login_time,login_type,token FROM logininfo WHERE ( user_id = ? and token = ? ) 
+2017-05-16 11:43:20  [ http-nio-8080-exec-1:90937287 ] - [ DEBUG ]  ==> Parameters: 25(String), MjU6MTQ5NDgxNTI5NjMyNw==(String)
+2017-05-16 11:43:20  [ http-nio-8080-exec-1:90937457 ] - [ DEBUG ]  <==      Total: 1
+2017-05-16 11:43:20  [ http-nio-8080-exec-1:90937458 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_name FROM user WHERE id = ? 
+2017-05-16 11:43:20  [ http-nio-8080-exec-1:90937494 ] - [ DEBUG ]  ==> Parameters: 25(Integer)
+2017-05-16 11:43:20  [ http-nio-8080-exec-1:90937516 ] - [ DEBUG ]  <==      Total: 1
+2017-05-16 11:43:22  [ http-nio-8080-exec-2:90939913 ] - [ DEBUG ]  检查验证码
+2017-05-16 11:43:22  [ http-nio-8080-exec-2:90939967 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,last_login_time,login_type,token FROM logininfo WHERE ( user_id = ? and token = ? ) 
+2017-05-16 11:43:22  [ http-nio-8080-exec-2:90939979 ] - [ DEBUG ]  ==> Parameters: 25(String), MjU6MTQ5NDgxNTI5NjMyNw==(String)
+2017-05-16 11:43:22  [ http-nio-8080-exec-2:90939991 ] - [ DEBUG ]  <==      Total: 1
+2017-05-16 11:43:22  [ http-nio-8080-exec-2:90940026 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_name FROM user WHERE id = ? 
+2017-05-16 11:43:22  [ http-nio-8080-exec-2:90940027 ] - [ DEBUG ]  ==> Parameters: 25(Integer)
+2017-05-16 11:43:22  [ http-nio-8080-exec-2:90940032 ] - [ DEBUG ]  <==      Total: 1

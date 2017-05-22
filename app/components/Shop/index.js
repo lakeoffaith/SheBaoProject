@@ -23,7 +23,7 @@ class Shop extends React.Component {
     return (
       <View style={css.lessBody}>
         <View style={[css.titleContainer]}>
-            <View style={css.title}><Text>附近医院</Text></View>
+            <View style={css.title}><Text>附近药店</Text></View>
         </View>
         <View style={{flex:1}}>
             <IJoyAmapView style={{flex:1}}/>

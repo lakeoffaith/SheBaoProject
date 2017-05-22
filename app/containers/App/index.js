@@ -82,7 +82,7 @@ const TabNav = TabNavigator({
   "Main": {
     screen: Main,
   },
-  "附近药店":{
+  "NearShop":{
     screen:Shop,
   },
   "User":{

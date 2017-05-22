@@ -29,16 +29,19 @@ class User extends React.Component {
   _showMessage=()=>{
     this.props.navigation.navigate('Share');
   }
-  async componentDidMount(){
+  componentDidMount(){
     //获取token,
     //
-    const demo={type:'get',url:'/api/getUserByToken',data:{},out:{save:true,key:'currentUser'}};
-     var resultDemo=await repository._fetch(demo);
-     if(resultDemo!=null){
-       this.setState({user:resultDemo.data});
-     }
+    storage.load({
+       key:"user",
+       autoSync:false,
+     })
+     .then(ret=>{
+       this.setState({user:ret});
+     })
+     .catch(error=>{
 
-
+     });
   }
   render() {
     return (

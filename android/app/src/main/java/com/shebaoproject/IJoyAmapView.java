@@ -1,13 +1,16 @@
 package com.shebaoproject;
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
 
 import com.amap.api.maps2d.AMap;
 import com.amap.api.maps2d.MapView;
+import com.amap.api.maps2d.model.BitmapDescriptor;
 import com.amap.api.maps2d.model.BitmapDescriptorFactory;
 import com.amap.api.maps2d.model.LatLng;
 import com.amap.api.maps2d.model.Marker;
@@ -19,18 +22,20 @@ import com.amap.api.services.core.SuggestionCity;
 import com.amap.api.services.poisearch.PoiResult;
 import com.amap.api.services.poisearch.PoiSearch;
 
+import java.io.InputStream;
 import java.util.List;
 
 /**
  * Created by ijoy on 17-4-25.
  */
-public class IJoyAmapView extends RelativeLayout implements  PoiSearch.OnPoiSearchListener {
+public class IJoyAmapView extends RelativeLayout implements  PoiSearch.OnPoiSearchListener ,AMap.OnMapClickListener, AMap.OnMarkerClickListener {
     private AMap aMap=null;
     private MapView mMapView=null;
     private PoiSearch.Query query=null;
     private PoiSearch poiSearch=null;
     private PoiResult poiResult = null;
-
+    private InfoWinAdapter adapter;
+    private Marker oldMarker;
     public IJoyAmapView(Context context,AmapViewManager manager) {
         super(context);
         LayoutInflater.from(context).inflate(R.layout.ijoy_amap,this);
@@ -39,8 +44,11 @@ public class IJoyAmapView extends RelativeLayout implements  PoiSearch.OnPoiSear
         mMapView.onResume();
         if(mMapView!=null){
             aMap=mMapView.getMap();
-            initMarker();
+
             initSearch();
+            adapter = new InfoWinAdapter(context);
+            aMap.setInfoWindowAdapter(adapter);
+            initMarker();
         }
     }
     private void initMarker(){
@@ -49,9 +57,10 @@ public class IJoyAmapView extends RelativeLayout implements  PoiSearch.OnPoiSear
         MarkerOptions markerOption = new MarkerOptions();
         markerOption.position(latLng);
         markerOption.draggable(true);
+
         markerOption.icon(BitmapDescriptorFactory.fromResource(R.mipmap.iconmaker));
         Marker marker = aMap.addMarker(markerOption);
-        marker.setRotateAngle(30);
+        marker.setRotateAngle(0);
     }
     private void initSearch(){
         query=new PoiSearch.Query("药店","","成都");
@@ -88,5 +97,22 @@ public class IJoyAmapView extends RelativeLayout implements  PoiSearch.OnPoiSear
     @Override
     public void onPoiItemSearched(PoiItem poiItem, int i) {
 
+    }
+
+    @Override
+    public void onMapClick(LatLng latLng) {
+        Log.e("info", "onMapClick: ");
+        if (oldMarker != null) {
+            oldMarker.hideInfoWindow();
+
+        }
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        Log.e("info", "onMarkerClick: ");
+        oldMarker = marker;
+
+        return false; //返回 “false”，除定义的操作之外，默认操作也将会被执行
     }
 }

@@ -10,12 +10,18 @@ function DataRepository(){
   DataRepository.instance=this;
 }
 async function postFetch(url,query){
+  var data={};
+  data=query;
     url=BASEURL+url;
     var token;
+    console.log(url);
+    console.log(JSON.stringify(query).replace(/{|}/gi, ""));
     if(url.indexOf('login')==-1 && url.indexOf('Login')==-1){
        token= await storage.load({key:'token',autoSync:false});
        token=token.data;
     }
+    // 'token':token
+    // body: JSON.stringify(query).replace(/{|}/gi, "")
     return result= await fetch(url,{
       method:'post',
       headers:{
@@ -23,10 +29,12 @@ async function postFetch(url,query){
         'Content-Type':'application/json',
         'token':token
       },
-      body: JSON.stringify(query).replace(/{|}/gi, "")
+      body:JSON.stringify(data)
+
      })
-    .then((response)=>response.json())
+    .then((response)=>{return response.json()})
     .then((result)=>{
+      console.log(result);
       if(result.success){
         return result;
       }else {
@@ -34,6 +42,7 @@ async function postFetch(url,query){
       }
     })
     .catch(error=>{
+      console.log(error);
       alert('网络错误');
     })
 }
@@ -42,15 +51,15 @@ async function getFetch(url,query){
     console.log(url);
     var token;
     if(url.indexOf('login')==-1 && url.indexOf('Login')==-1){
-       token= await storage.load({key:'token',autoSync:false});
-       if(token){
+      try {
+        token= await storage.load({key:'token',autoSync:false});
+      } catch (e) {
+        alert("用户没有登录");
+         return null;
+      }
+       console.log(token);
          token=token.data;
          console.log("获取缓存 token="+token);
-       }else{
-         token="";
-         console.log("用户没有登录");
-         return null;
-       }
 
     }
     if(query!=null && query.page!=null && query.page>0)url+="&page="+query.page;
