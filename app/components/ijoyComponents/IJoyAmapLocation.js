@@ -6,9 +6,9 @@ const onLocationChanged = 'mapLocationChanged';
 
 export default class ALocation {
 
-  static startLocation() {
+ static startLocation() {
     AMapLocation.startLocation();
-  }
+ }
 
   static stopLocation() {
     AMapLocation.stopLocation();

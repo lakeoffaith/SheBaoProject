@@ -1,0 +1,165 @@
+2017-05-22 10:22:14  [ http-nio-8080-exec-8:2947915 ] - [ DEBUG ]  根据手机号获取验证码
+2017-05-22 10:22:14  [ http-nio-8080-exec-8:2947955 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( login_name = ? ) 
+2017-05-22 10:22:14  [ http-nio-8080-exec-8:2948004 ] - [ DEBUG ]  ==> Parameters: 18228084571(String)
+2017-05-22 10:22:15  [ http-nio-8080-exec-8:2948708 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 10:22:15  [ http-nio-8080-exec-8:2948714 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE ( login_name = ? ) 
+2017-05-22 10:22:15  [ http-nio-8080-exec-8:2948715 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 1912(String), 18228084571(String), null, 2017-05-15 10:28:16.0(Timestamp), 0(Integer), MjU6MTQ5NDgxNTI5NjMyNw==(String), 18228084571(String)
+2017-05-22 10:22:15  [ http-nio-8080-exec-8:2948933 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 10:23:24  [ http-nio-8080-exec-10:3018119 ] - [ DEBUG ]  根据手机号获取验证码
+2017-05-22 10:23:24  [ http-nio-8080-exec-10:3018121 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( login_name = ? ) 
+2017-05-22 10:23:24  [ http-nio-8080-exec-10:3018122 ] - [ DEBUG ]  ==> Parameters: 18228084571(String)
+2017-05-22 10:23:24  [ http-nio-8080-exec-10:3018135 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 10:23:24  [ http-nio-8080-exec-10:3018136 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE ( login_name = ? ) 
+2017-05-22 10:23:24  [ http-nio-8080-exec-10:3018137 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 9484(String), 18228084571(String), null, 2017-05-15 10:28:16.0(Timestamp), 0(Integer), MjU6MTQ5NDgxNTI5NjMyNw==(String), 18228084571(String)
+2017-05-22 10:23:24  [ http-nio-8080-exec-10:3018207 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 10:31:55  [ http-nio-8080-exec-2:3529021 ] - [ DEBUG ]  根据手机号获取验证码
+2017-05-22 10:31:55  [ http-nio-8080-exec-2:3529022 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( login_name = ? ) 
+2017-05-22 10:31:55  [ http-nio-8080-exec-2:3529023 ] - [ DEBUG ]  ==> Parameters: 18228084571(String)
+2017-05-22 10:31:55  [ http-nio-8080-exec-2:3529028 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 10:31:55  [ http-nio-8080-exec-2:3529029 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE ( login_name = ? ) 
+2017-05-22 10:31:55  [ http-nio-8080-exec-2:3529030 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 5813(String), 18228084571(String), null, 2017-05-15 10:28:16.0(Timestamp), 0(Integer), MjU6MTQ5NDgxNTI5NjMyNw==(String), 18228084571(String)
+2017-05-22 10:31:55  [ http-nio-8080-exec-2:3529099 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 10:35:55  [ http-nio-8080-exec-4:3768577 ] - [ DEBUG ]  根据手机号获取验证码
+2017-05-22 10:35:55  [ http-nio-8080-exec-4:3768578 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( login_name = ? ) 
+2017-05-22 10:35:55  [ http-nio-8080-exec-4:3768579 ] - [ DEBUG ]  ==> Parameters: 18228084571(String)
+2017-05-22 10:35:55  [ http-nio-8080-exec-4:3768586 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 10:35:55  [ http-nio-8080-exec-4:3768587 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE ( login_name = ? ) 
+2017-05-22 10:35:55  [ http-nio-8080-exec-4:3768588 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 9606(String), 18228084571(String), null, 2017-05-15 10:28:16.0(Timestamp), 0(Integer), MjU6MTQ5NDgxNTI5NjMyNw==(String), 18228084571(String)
+2017-05-22 10:35:55  [ http-nio-8080-exec-4:3768654 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 10:37:35  [ http-nio-8080-exec-6:3869049 ] - [ DEBUG ]  根据手机号获取验证码
+2017-05-22 10:37:35  [ http-nio-8080-exec-6:3869050 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( login_name = ? ) 
+2017-05-22 10:37:35  [ http-nio-8080-exec-6:3869051 ] - [ DEBUG ]  ==> Parameters: 18228084571(String)
+2017-05-22 10:37:35  [ http-nio-8080-exec-6:3869061 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 10:37:35  [ http-nio-8080-exec-6:3869062 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE ( login_name = ? ) 
+2017-05-22 10:37:35  [ http-nio-8080-exec-6:3869063 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 6034(String), 18228084571(String), null, 2017-05-15 10:28:16.0(Timestamp), 0(Integer), MjU6MTQ5NDgxNTI5NjMyNw==(String), 18228084571(String)
+2017-05-22 10:37:35  [ http-nio-8080-exec-6:3869125 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 10:39:38  [ http-nio-8080-exec-8:3992399 ] - [ DEBUG ]  根据手机号获取验证码
+2017-05-22 10:39:38  [ http-nio-8080-exec-8:3992400 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( login_name = ? ) 
+2017-05-22 10:39:38  [ http-nio-8080-exec-8:3992401 ] - [ DEBUG ]  ==> Parameters: 18228084571(String)
+2017-05-22 10:39:38  [ http-nio-8080-exec-8:3992412 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 10:39:38  [ http-nio-8080-exec-8:3992413 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE ( login_name = ? ) 
+2017-05-22 10:39:38  [ http-nio-8080-exec-8:3992414 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 6187(String), 18228084571(String), null, 2017-05-15 10:28:16.0(Timestamp), 0(Integer), MjU6MTQ5NDgxNTI5NjMyNw==(String), 18228084571(String)
+2017-05-22 10:39:38  [ http-nio-8080-exec-8:3992435 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 10:41:42  [ http-nio-8080-exec-10:4116495 ] - [ DEBUG ]  根据手机号获取验证码
+2017-05-22 10:41:42  [ http-nio-8080-exec-10:4116496 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( login_name = ? ) 
+2017-05-22 10:41:42  [ http-nio-8080-exec-10:4116497 ] - [ DEBUG ]  ==> Parameters: 18228084571(String)
+2017-05-22 10:41:42  [ http-nio-8080-exec-10:4116507 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 10:41:42  [ http-nio-8080-exec-10:4116508 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE ( login_name = ? ) 
+2017-05-22 10:41:42  [ http-nio-8080-exec-10:4116508 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 6073(String), 18228084571(String), null, 2017-05-15 10:28:16.0(Timestamp), 0(Integer), MjU6MTQ5NDgxNTI5NjMyNw==(String), 18228084571(String)
+2017-05-22 10:41:43  [ http-nio-8080-exec-10:4116538 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 10:46:52  [ http-nio-8080-exec-2:4426386 ] - [ DEBUG ]  根据手机号获取验证码
+2017-05-22 10:46:52  [ http-nio-8080-exec-2:4426387 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( login_name = ? ) 
+2017-05-22 10:46:52  [ http-nio-8080-exec-2:4426388 ] - [ DEBUG ]  ==> Parameters: 18228084571(String)
+2017-05-22 10:46:52  [ http-nio-8080-exec-2:4426395 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 10:46:52  [ http-nio-8080-exec-2:4426397 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE ( login_name = ? ) 
+2017-05-22 10:46:52  [ http-nio-8080-exec-2:4426398 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 7297(String), 18228084571(String), null, 2017-05-15 10:28:16.0(Timestamp), 0(Integer), MjU6MTQ5NDgxNTI5NjMyNw==(String), 18228084571(String)
+2017-05-22 10:46:52  [ http-nio-8080-exec-2:4426425 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 10:50:38  [ http-nio-8080-exec-4:4651725 ] - [ DEBUG ]  根据手机号获取验证码
+2017-05-22 10:50:38  [ http-nio-8080-exec-4:4651726 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( login_name = ? ) 
+2017-05-22 10:50:38  [ http-nio-8080-exec-4:4651726 ] - [ DEBUG ]  ==> Parameters: 18228084571(String)
+2017-05-22 10:50:38  [ http-nio-8080-exec-4:4651743 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 10:50:38  [ http-nio-8080-exec-4:4651744 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE ( login_name = ? ) 
+2017-05-22 10:50:38  [ http-nio-8080-exec-4:4651744 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 2574(String), 18228084571(String), null, 2017-05-15 10:28:16.0(Timestamp), 0(Integer), MjU6MTQ5NDgxNTI5NjMyNw==(String), 18228084571(String)
+2017-05-22 10:50:38  [ http-nio-8080-exec-4:4651768 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 10:55:08  [ http-nio-8080-exec-6:4922404 ] - [ DEBUG ]  根据手机号获取验证码
+2017-05-22 10:55:08  [ http-nio-8080-exec-6:4922405 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( login_name = ? ) 
+2017-05-22 10:55:08  [ http-nio-8080-exec-6:4922406 ] - [ DEBUG ]  ==> Parameters: 18228084571(String)
+2017-05-22 10:55:08  [ http-nio-8080-exec-6:4922417 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 10:55:08  [ http-nio-8080-exec-6:4922418 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE ( login_name = ? ) 
+2017-05-22 10:55:08  [ http-nio-8080-exec-6:4922419 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 3325(String), 18228084571(String), null, 2017-05-15 10:28:16.0(Timestamp), 0(Integer), MjU6MTQ5NDgxNTI5NjMyNw==(String), 18228084571(String)
+2017-05-22 10:55:08  [ http-nio-8080-exec-6:4922474 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 11:01:21  [ http-nio-8080-exec-8:5294861 ] - [ DEBUG ]  根据手机号获取验证码
+2017-05-22 11:01:21  [ http-nio-8080-exec-8:5294862 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( login_name = ? ) 
+2017-05-22 11:01:21  [ http-nio-8080-exec-8:5294863 ] - [ DEBUG ]  ==> Parameters: 18228084571(String)
+2017-05-22 11:01:21  [ http-nio-8080-exec-8:5294866 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 11:01:21  [ http-nio-8080-exec-8:5294867 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE ( login_name = ? ) 
+2017-05-22 11:01:21  [ http-nio-8080-exec-8:5294868 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 8923(String), 18228084571(String), null, 2017-05-15 10:28:16.0(Timestamp), 0(Integer), MjU6MTQ5NDgxNTI5NjMyNw==(String), 18228084571(String)
+2017-05-22 11:01:21  [ http-nio-8080-exec-8:5294894 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 11:02:43  [ http-nio-8080-exec-10:5376812 ] - [ DEBUG ]  根据手机号获取验证码
+2017-05-22 11:02:43  [ http-nio-8080-exec-10:5376813 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( login_name = ? ) 
+2017-05-22 11:02:43  [ http-nio-8080-exec-10:5376814 ] - [ DEBUG ]  ==> Parameters: 18228084571(String)
+2017-05-22 11:02:43  [ http-nio-8080-exec-10:5376852 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 11:02:43  [ http-nio-8080-exec-10:5376853 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE ( login_name = ? ) 
+2017-05-22 11:02:43  [ http-nio-8080-exec-10:5376854 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 8499(String), 18228084571(String), null, 2017-05-15 10:28:16.0(Timestamp), 0(Integer), MjU6MTQ5NDgxNTI5NjMyNw==(String), 18228084571(String)
+2017-05-22 11:02:43  [ http-nio-8080-exec-10:5376871 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 11:06:40  [ http-nio-8080-exec-2:5614115 ] - [ DEBUG ]  根据手机号和验证码登录
+2017-05-22 11:06:40  [ http-nio-8080-exec-2:5614117 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE code = ? AND login_name = ? 
+2017-05-22 11:06:40  [ http-nio-8080-exec-2:5614117 ] - [ DEBUG ]  ==> Parameters: 8499(String), 18228084571(String)
+2017-05-22 11:06:40  [ http-nio-8080-exec-2:5614137 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 11:06:40  [ http-nio-8080-exec-2:5614155 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE id = ? 
+2017-05-22 11:06:40  [ http-nio-8080-exec-2:5614156 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 8499(String), 18228084571(String), null, 2017-05-22 11:06:40.637(Timestamp), 0(Integer), MjU6MTQ5NTQyMjQwMDYyMA==(String), 34(Integer)
+2017-05-22 11:06:40  [ http-nio-8080-exec-2:5614331 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 11:06:41  [ http-nio-8080-exec-3:5614552 ] - [ DEBUG ]  检查验证码
+2017-05-22 11:06:41  [ http-nio-8080-exec-3:5614553 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( user_id = ? and token = ? ) 
+2017-05-22 11:06:41  [ http-nio-8080-exec-3:5614554 ] - [ DEBUG ]  ==> Parameters: 25(String), MjU6MTQ5NTQyMjQwMDYyMA==(String)
+2017-05-22 11:06:41  [ http-nio-8080-exec-3:5614597 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 11:06:41  [ http-nio-8080-exec-3:5614598 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_name FROM user WHERE id = ? 
+2017-05-22 11:06:41  [ http-nio-8080-exec-3:5614599 ] - [ DEBUG ]  ==> Parameters: 25(Integer)
+2017-05-22 11:06:41  [ http-nio-8080-exec-3:5614783 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 11:08:42  [ http-nio-8080-exec-5:5735955 ] - [ DEBUG ]  根据手机号获取验证码
+2017-05-22 11:08:42  [ http-nio-8080-exec-5:5735956 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( login_name = ? ) 
+2017-05-22 11:08:42  [ http-nio-8080-exec-5:5735957 ] - [ DEBUG ]  ==> Parameters: 18228084571(String)
+2017-05-22 11:08:42  [ http-nio-8080-exec-5:5735964 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 11:08:42  [ http-nio-8080-exec-5:5735965 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE ( login_name = ? ) 
+2017-05-22 11:08:42  [ http-nio-8080-exec-5:5735966 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 1241(String), 18228084571(String), null, 2017-05-22 11:06:41.0(Timestamp), 0(Integer), MjU6MTQ5NTQyMjQwMDYyMA==(String), 18228084571(String)
+2017-05-22 11:08:42  [ http-nio-8080-exec-5:5736083 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 11:08:48  [ http-nio-8080-exec-7:5742171 ] - [ DEBUG ]  根据手机号和验证码登录
+2017-05-22 11:08:48  [ http-nio-8080-exec-7:5742172 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE code = ? AND login_name = ? 
+2017-05-22 11:08:48  [ http-nio-8080-exec-7:5742173 ] - [ DEBUG ]  ==> Parameters: 1241(String), 18228084571(String)
+2017-05-22 11:08:48  [ http-nio-8080-exec-7:5742182 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 11:08:48  [ http-nio-8080-exec-7:5742182 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE id = ? 
+2017-05-22 11:08:48  [ http-nio-8080-exec-7:5742183 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 1241(String), 18228084571(String), null, 2017-05-22 11:08:48.664(Timestamp), 0(Integer), MjU6MTQ5NTQyMjUyODY2NA==(String), 34(Integer)
+2017-05-22 11:08:48  [ http-nio-8080-exec-7:5742250 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 11:08:48  [ http-nio-8080-exec-8:5742319 ] - [ DEBUG ]  检查验证码
+2017-05-22 11:08:48  [ http-nio-8080-exec-8:5742320 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( user_id = ? and token = ? ) 
+2017-05-22 11:08:48  [ http-nio-8080-exec-8:5742321 ] - [ DEBUG ]  ==> Parameters: 25(String), MjU6MTQ5NTQyMjUyODY2NA==(String)
+2017-05-22 11:08:48  [ http-nio-8080-exec-8:5742328 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 11:08:48  [ http-nio-8080-exec-8:5742329 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_name FROM user WHERE id = ? 
+2017-05-22 11:08:48  [ http-nio-8080-exec-8:5742329 ] - [ DEBUG ]  ==> Parameters: 25(Integer)
+2017-05-22 11:08:48  [ http-nio-8080-exec-8:5742337 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 11:09:02  [ http-nio-8080-exec-10:5756424 ] - [ DEBUG ]  检查验证码
+2017-05-22 11:09:02  [ http-nio-8080-exec-10:5756426 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( user_id = ? and token = ? ) 
+2017-05-22 11:09:02  [ http-nio-8080-exec-10:5756426 ] - [ DEBUG ]  ==> Parameters: ���rӛ��-(String), [object Object](String)
+2017-05-22 11:09:02  [ http-nio-8080-exec-10:5756475 ] - [ DEBUG ]  <==      Total: 0
+2017-05-22 11:19:53  [ http-nio-8080-exec-1:6407245 ] - [ DEBUG ]  根据手机号获取验证码
+2017-05-22 11:19:53  [ http-nio-8080-exec-1:6407246 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( login_name = ? ) 
+2017-05-22 11:19:53  [ http-nio-8080-exec-1:6407246 ] - [ DEBUG ]  ==> Parameters: 18228084571(String)
+2017-05-22 11:19:53  [ http-nio-8080-exec-1:6407255 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 11:19:53  [ http-nio-8080-exec-1:6407256 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE ( login_name = ? ) 
+2017-05-22 11:19:53  [ http-nio-8080-exec-1:6407257 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 8069(String), 18228084571(String), null, 2017-05-22 11:08:49.0(Timestamp), 0(Integer), MjU6MTQ5NTQyMjUyODY2NA==(String), 18228084571(String)
+2017-05-22 11:19:53  [ http-nio-8080-exec-1:6407266 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 11:20:00  [ http-nio-8080-exec-3:6414229 ] - [ DEBUG ]  根据手机号和验证码登录
+2017-05-22 11:20:00  [ http-nio-8080-exec-3:6414229 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE code = ? AND login_name = ? 
+2017-05-22 11:20:00  [ http-nio-8080-exec-3:6414230 ] - [ DEBUG ]  ==> Parameters: 8069(String), 18228084571(String)
+2017-05-22 11:20:00  [ http-nio-8080-exec-3:6414237 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 11:20:00  [ http-nio-8080-exec-3:6414238 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE id = ? 
+2017-05-22 11:20:00  [ http-nio-8080-exec-3:6414239 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 8069(String), 18228084571(String), null, 2017-05-22 11:20:00.72(Timestamp), 0(Integer), MjU6MTQ5NTQyMzIwMDcyMA==(String), 34(Integer)
+2017-05-22 11:20:00  [ http-nio-8080-exec-3:6414251 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 11:20:00  [ http-nio-8080-exec-4:6414381 ] - [ DEBUG ]  检查验证码
+2017-05-22 11:20:00  [ http-nio-8080-exec-4:6414382 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( user_id = ? and token = ? ) 
+2017-05-22 11:20:00  [ http-nio-8080-exec-4:6414383 ] - [ DEBUG ]  ==> Parameters: 25(String), MjU6MTQ5NTQyMzIwMDcyMA==(String)
+2017-05-22 11:20:00  [ http-nio-8080-exec-4:6414392 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 11:20:00  [ http-nio-8080-exec-4:6414404 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_name FROM user WHERE id = ? 
+2017-05-22 11:20:00  [ http-nio-8080-exec-4:6414404 ] - [ DEBUG ]  ==> Parameters: 25(Integer)
+2017-05-22 11:20:00  [ http-nio-8080-exec-4:6414410 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 11:22:40  [ http-nio-8080-exec-6:6573659 ] - [ DEBUG ]  根据手机号获取验证码
+2017-05-22 11:22:40  [ http-nio-8080-exec-6:6573691 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( login_name = ? ) 
+2017-05-22 11:22:40  [ http-nio-8080-exec-6:6573691 ] - [ DEBUG ]  ==> Parameters: 18228084571(String)
+2017-05-22 11:22:40  [ http-nio-8080-exec-6:6573702 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 11:22:40  [ http-nio-8080-exec-6:6573703 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE ( login_name = ? ) 
+2017-05-22 11:22:40  [ http-nio-8080-exec-6:6573704 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 2586(String), 18228084571(String), null, 2017-05-22 11:20:01.0(Timestamp), 0(Integer), MjU6MTQ5NTQyMzIwMDcyMA==(String), 18228084571(String)
+2017-05-22 11:22:40  [ http-nio-8080-exec-6:6573717 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 11:22:48  [ http-nio-8080-exec-8:6581752 ] - [ DEBUG ]  根据手机号和验证码登录
+2017-05-22 11:22:48  [ http-nio-8080-exec-8:6581753 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE code = ? AND login_name = ? 
+2017-05-22 11:22:48  [ http-nio-8080-exec-8:6581753 ] - [ DEBUG ]  ==> Parameters: 2586(String), 18228084571(String)
+2017-05-22 11:22:48  [ http-nio-8080-exec-8:6581759 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 11:22:48  [ http-nio-8080-exec-8:6581760 ] - [ DEBUG ]  ==>  Preparing: UPDATE logininfo SET user_id = ?,code = ?,login_name = ?,password = ?,last_login_time = ?,login_type = ?,token = ? WHERE id = ? 
+2017-05-22 11:22:48  [ http-nio-8080-exec-8:6581760 ] - [ DEBUG ]  ==> Parameters: 25(Integer), 2586(String), 18228084571(String), null, 2017-05-22 11:22:48.241(Timestamp), 0(Integer), MjU6MTQ5NTQyMzM2ODI0MQ==(String), 34(Integer)
+2017-05-22 11:22:48  [ http-nio-8080-exec-8:6581771 ] - [ DEBUG ]  <==    Updates: 1
+2017-05-22 11:22:48  [ http-nio-8080-exec-9:6581867 ] - [ DEBUG ]  检查验证码
+2017-05-22 11:22:48  [ http-nio-8080-exec-9:6581868 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_id,code,login_name,password,last_login_time,login_type,token FROM logininfo WHERE ( user_id = ? and token = ? ) 
+2017-05-22 11:22:48  [ http-nio-8080-exec-9:6581869 ] - [ DEBUG ]  ==> Parameters: 25(String), MjU6MTQ5NTQyMzM2ODI0MQ==(String)
+2017-05-22 11:22:48  [ http-nio-8080-exec-9:6581875 ] - [ DEBUG ]  <==      Total: 1
+2017-05-22 11:22:48  [ http-nio-8080-exec-9:6581875 ] - [ DEBUG ]  ==>  Preparing: SELECT id,user_name FROM user WHERE id = ? 
+2017-05-22 11:22:48  [ http-nio-8080-exec-9:6581876 ] - [ DEBUG ]  ==> Parameters: 25(Integer)
+2017-05-22 11:22:48  [ http-nio-8080-exec-9:6581880 ] - [ DEBUG ]  <==      Total: 1

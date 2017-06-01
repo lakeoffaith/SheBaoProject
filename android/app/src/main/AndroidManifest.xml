@@ -27,7 +27,7 @@
       android:name=".MainApplication"
       android:allowBackup="true"
       android:label="@string/app_name"
-      android:icon="@mipmap/ic_launcher"
+      android:icon="@mipmap/shebao"
       android:theme="@style/AppTheme">
         <meta-data
             android:name="com.amap.api.v2.apikey"
